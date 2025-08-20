@@ -6,22 +6,43 @@
     <link rel="stylesheet" href="style.css">
     <title>Teste Github Pages</title>
 </head>
-<body>
+<body class="dark-mode">
     <h1>Esse e um tete do Github Pages</h1>
     <p>Este é um teste para verificar se o GitHub Pages está funcionando corretamente.</p>
     <p>Se você está vendo isso, então tudo está configurado corretamente!</p>
     <p>Você pode editar este arquivo <code>index.html</code> para personalizar o conteúdo.</p>
     <p>Para mais informações, consulte a <a href="https://pages.github.com">documentação do GitHub Pages</a>.</p>
-    <button onclick="alert('Botão clicado!')">
-        Teste
-    </button>
+    <button onclick="alert('Botão clicado!')">Teste</button>
+
+    <button id="toggle-mode">Alternar modo</button>
 
     <p>Para navegar para a segunda página, clique <a href="pag2.html">aqui</a>.</p>
-
 
     <footer>
         <p>&copy; 2023 Seu Nome. Todos os direitos reservados.</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        const body = document.body;
+        const toggleBtn = document.getElementById('toggle-mode');
+
+        // Detecta preferência do usuário ao carregar
+        function setInitialMode() {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                body.classList.add('dark-mode');
+                body.classList.remove('light-mode');
+            } else {
+                body.classList.add('light-mode');
+                body.classList.remove('dark-mode');
+            }
+        }
+        setInitialMode();
+
+        // Alterna modo manualmente
+        toggleBtn.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            body.classList.toggle('light-mode');
+        });
+    </script>
 </body>
 </html>

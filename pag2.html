@@ -6,11 +6,34 @@
     <link rel="stylesheet" href="style.css">
     <title>PAGINA 2</title>
 </head>
-<body>
+<body class="dark-mode">
     <h1>OPA</h1>
     <p>Esta é a segunda página do teste do GitHub Pages.</p>
     <p>Você pode navegar entre as páginas para verificar se tudo está funcionando corretamente.</p>
     <p>Para voltar à página inicial, clique <a href="index.html">aqui</a>.</p>
     <p>Obrigado por visitar!</p>
+    <button id="toggle-mode">Alternar modo</button>
 </body>
+<script>
+    const body = document.body;
+    const toggleBtn = document.getElementById('toggle-mode');
+
+    // Detecta preferência do usuário ao carregar
+    function setInitialMode() {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            body.classList.add('dark-mode');
+            body.classList.remove('light-mode');
+        } else {
+            body.classList.add('light-mode');
+            body.classList.remove('dark-mode');
+        }
+    }
+    setInitialMode();
+
+    // Alterna modo manualmente
+    toggleBtn.addEventListener('click', function() {
+        body.classList.toggle('dark-mode');
+        body.classList.toggle('light-mode');
+    });
+</script>
 </html>
