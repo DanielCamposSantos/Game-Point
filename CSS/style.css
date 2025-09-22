@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+:root {
+    --branco: #f4f4f4;
+    --texto: #374151;
+    --links: #C4C4C4;
+    --preto: #101416;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Geologica", sans-serif; 
+    
+}
+
+
+header {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 50px ;
+}
+
+.logo{
+  width: 136px;
+  height: 45px;
+}
+
+
+
+.menu-header > p{
+    display: block;
+}
+
+.menu-header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+main{
+    height: 1000px
+}
+
+
+
+
+
+
+
+
+
+footer {
+    background-color: var(--preto);
+    padding: 60px 120px;
+    
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+
+.links  h1{
+    color: var(--branco);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 20px */
+}
+
+.links  ul{
+    list-style: none;
+}
+
+.links  li{
+    color: var(--links);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 100%; /* 16px */
+}
+
+
+hr{
+    margin: 50px 0px;
+}
