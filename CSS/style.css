@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+
+
+
+
+
+
+:root {
+    --branco: #f4f4f4;
+    --texto: #374151;
+    --links: #C4C4C4;
+    --preto: #101416;
+    --disponivel: #E3E9E4;
+    --disponivel-texto: #374151;
+}
+
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: "Geologica", sans-serif; 
+    
+}
+
+
+header {
+
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 50px ;
+}
+
+.logo{
+  width: 136px;
+  height: 45px;
+}
+
+
+
+.menu-header > p{
+    display: block;
+}
+
+.menu-header{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+main{
+    height: 1000px
+}
+
+
+.calendario{
+    width: 396px;
+    height: 396px;
+}
+
+.seletor-mes{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.seletor-mes h1{
+   color: #000;
+    font-family: Geologica;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 100%;
+}
+
+.seletor-mes .mes-ano {
+    color: var(--Texto-menu, #374151);
+    text-align: right;
+    font-family: Geologica;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 100%; /* 13px */
+}
+
+.mudar-mes{
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    border: none;
+    background: none;
+}
+
+
+.calendario .dias-semana{
+    display: flex;
+    gap: 27px;
+    list-style: none;
+}
+
+.dias{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    list-style: none;
+    margin-top: 25px;
+}
+
+.dias li{
+    width: 35px;
+    height: 35px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 45px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; 
+    color: var(--disponivel-texto);
+    cursor: pointer;
+    background-color: var(--disponivel);
+}
+
+
+
+
+
+
+footer {
+    background-color: var(--preto);
+    padding: 60px 120px;
+    
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    flex-flow: row wrap;
+    
+    
+}
+
+.bloco-de-links{
+    height: 200px;
+    width: 170px;
+}
+
+
+.bloco-de-links  h1{
+    color: var(--branco);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 20px */
+    padding-bottom: 20px;
+    
+}
+
+.bloco-de-links  ul{
+    list-style: none;
+    padding-bottom: 50px;
+    
+    
+    
+}
+
+.bloco-de-links  li{
+    color: var(--links);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 100%; /* 16px */
+    padding-right: 20px;
+    
+}
+
+@media (max-width:1300px){
+    .links {
+        justify-content: center;
+        align-items: center;
+    }
+    .bloco-de-links {
+        width: calc(100% / 3);
+        min-width: 170px;
+        max-width: calc(100% / 3);
+        height: 200px;
+        box-sizing: border-box;
+    }
+}
