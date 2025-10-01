@@ -127,10 +127,11 @@ mark {
 
 #erro{
     display: none;
+    color: var(--vermelho);
 }
 
 #erro.show{
-
+    display: block;
 }
 
 
