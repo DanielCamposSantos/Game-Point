@@ -2,10 +2,6 @@
 
 
 
-
-
-
-
 :root {
     --branco: #f4f4f4;
     --texto: #374151;
@@ -25,7 +21,6 @@
 
 
 header {
-
     background-color: var(--branco);
     display: flex;
     justify-content: space-between;
@@ -71,7 +66,7 @@ main {
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
-    min-width: 320px;
+    min-width: 318px;
 
 
 
@@ -129,6 +124,23 @@ mark {
     background: #F9F9F9;
 }
 
+
+#erro{
+    display: none;
+}
+
+#erro.show{
+
+}
+
+
+
+
+
+
+
+
+
 .login button {
     border-radius: 10px;
     background: var(--Texto-menu, #374151);
@@ -145,6 +157,34 @@ mark {
 }
 
 
+.login button {
+    border-radius: 10px;
+    background: var(--Texto-menu, #374151);
+    display: flex;
+    padding: 20px 30px;
+    justify-content: center;
+    align-items: center;
+    color: var(--branco);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 100%;
+    border: none;
+    
+
+
+}
+
+.login button:hover {
+    cursor: pointer;
+    background: var(--preto);
+
+}
+
+
+
+
+
 .login aside {
     font-size: 14px;
     font-style: normal;
@@ -158,42 +198,35 @@ mark {
 }
 
 picture {
+
     min-width: 300px;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    width: 100%;
+    flex: 1
 }
 
 
 
-picture img{
-    
-   
+picture img {
     display: block;
+    width: 100%;
+
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
 /* Para telas menores (mobile) */
 @media (max-width: 1490px) {
-    main{
+    main {
         flex-direction: column;
     }
+
     picture {
         height: 100%;
         width: 100%;
-        flex:1
+        flex: 1
     }
-    
+
     picture img {
         width: 100%;
     }
