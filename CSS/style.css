@@ -158,23 +158,6 @@ mark {
 }
 
 
-.login button {
-    border-radius: 10px;
-    background: var(--Texto-menu, #374151);
-    display: flex;
-    padding: 20px 30px;
-    justify-content: center;
-    align-items: center;
-    color: var(--branco);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 100%;
-    border: none;
-    
-
-
-}
 
 .login button:hover {
     cursor: pointer;
