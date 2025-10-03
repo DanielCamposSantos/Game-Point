@@ -2,13 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap");
 
 :root {
-  --branco: #f4f4f4; /* Usado no background do header */
-  --texto: #374151; /* Texto principal e cor de input */
+  --branco: #f4f4f4;
+  --texto: #374151;
   --links: #c4c4c4;
-  --preto: #101416; /* Fundo do footer e botão "Cadastre-se" */
-  --disponivel: #e3e9e4; /* Não utilizado, mas mantido */
-  --disponivel-texto: #374151; /* Não utilizado, mas mantido */
-  --vermelho-gamepoint: #d32f2f; /* Cor vermelha da imagem, usada no botão ativo e hover */ 
+  --preto: #101416;
+  --disponivel: #e3e9e4;
+  --disponivel-texto: #374151;
+  --vermelho-gamepoint: #d32f2f;
 }
 
 * {
@@ -18,21 +18,18 @@
   box-sizing: border-box;
 }
 
-/* --- Cabeçalho (Header) - Escopo Fornecido --- */
 header {
   background-color: var(--branco);
   display: flex;
   justify-content: space-between;
-  align-items: center; /* Garantindo que tudo fique alinhado verticalmente */
+  align-items: center;
   padding: 22px 50px;
-  border-bottom: 1px solid #eee; /* Adicionando borda sutil como na imagem */
+  border-bottom: 1px solid #eee;
 }
 
 .logo {
   width: 136px;
   height: 45px;
-  /* Para simular o visual P Game Point, você precisaria de uma imagem ou de mais HTML. 
-       Aqui, a tag <img> simplesmente ocupará o espaço definido. */
 }
 
 .menu-header {
@@ -44,23 +41,21 @@ header {
 .menu-header a {
   text-decoration: none;
   color: var(--texto);
-  font-size: 1rem; /* Tamanho de fonte padrão */
+  font-size: 1rem;
   transition: color 0.1s ease 0.1s;
 }
 
 .menu-header a:hover {
-  color: var(--vermelho-gamepoint); /* Usando o vermelho da imagem */
+  color: var(--vermelho-gamepoint);
 }
 
 .menu-header img {
-  height: 20px; /* Ajustando o tamanho dos ícones */
+  height: 20px;
   width: auto;
   cursor: pointer;
 }
-
-/* --- Conteúdo Principal (Main - Cadastro) --- */
 .main-cadastro {
-  min-height: 80vh; /* Ajustado para preencher o espaço, pois height: 1000px é fixo e pode ser problemático */
+  min-height: 80vh;
   padding: 40px 20px;
   text-align: center;
   background-color: #fff;
@@ -83,14 +78,13 @@ header {
   margin-bottom: 30px;
 }
 
-/* Seletor de Perfil */
 .role-selector {
   display: flex;
   justify-content: center;
   margin-bottom: 30px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  overflow: hidden;
+  border: none;
+  border-radius: 0;
+  gap: 20px;
 }
 
 .role-button {
@@ -101,17 +95,15 @@ header {
   color: var(--texto);
   font-weight: 500;
   cursor: pointer;
-  
+
 }
 
 .role-button.anfitriao-button {
   border-right: 1px solid #ddd;
   padding: 15px 35px;
   border-radius: 150px;
-background: #E6EAF0;
-border: 0px;
-white;
-
+  background: #E6EAF0;
+  border: 0px;
 }
 
 .role-button.active {
@@ -119,12 +111,12 @@ white;
   color: #fff;
   font-weight: 600;
   display: inline-flex;
-padding: 15px 35px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-border-radius: 150px;
-background: var(--Vermelho-base, #F33128);
+  padding: 15px 35px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 150px;
+  background: var(--Vermelho-base, #F33128);
 }
 
 /* Formulário */
@@ -195,7 +187,6 @@ background: var(--Vermelho-base, #F33128);
   background-color: #222;
 }
 
-/* --- Rodapé (Footer) - Escopo Fornecido --- */
 footer {
   background-color: var(--preto);
   padding: 60px 120px;
@@ -280,19 +271,18 @@ footer hr {
 .direitos img {
   width: 136px;
   height: 45px;
-  /* Para simular o logo no rodapé, você pode querer adicionar o texto, mas mantive a tag <img> conforme seu escopo */
 }
 
 .direitos p {
   color: var(--branco);
 }
 
-/* Media Queries - Escopo Fornecido */
 @media (max-width: 1300px) {
   .links {
     justify-content: flex-start;
     align-items: flex-start;
   }
+
   .bloco-de-links {
     flex: 0 0 calc(100% / 3);
     max-width: calc(100% / 3);
@@ -306,6 +296,7 @@ footer hr {
   header {
     padding: 22px 20px;
   }
+
   .bloco-de-links {
     flex: 0 0 50%;
     max-width: 50%;
@@ -317,17 +308,41 @@ footer hr {
   footer {
     padding: 40px 20px;
   }
+
   .links {
     flex-direction: column;
   }
+
   .bloco-de-links {
     flex: unset;
     max-width: unset;
     min-width: unset;
     width: 100%;
   }
+
   .direitos {
     flex-direction: column;
     align-items: flex-start;
   }
+}
+
+meter {
+  height: 10px;
+  width: 100%;
+  background: #eee;
+}
+
+meter::-webkit-meter-optimum-value {
+  background: #2e7d32;
+  /* Verde */
+}
+
+meter::-webkit-meter-suboptimum-value {
+  background: #fbc02d;
+  /* Amarelo */
+}
+
+meter::-webkit-meter-even-less-good-value {
+  background: #d32f2f;
+  /* Vermelho */
 }
