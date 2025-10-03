@@ -1,348 +1,187 @@
-/* Escopo CSS fornecido */
-@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap');
+
+
+
+
+
+
 
 :root {
-  --branco: #f4f4f4;
-  --texto: #374151;
-  --links: #c4c4c4;
-  --preto: #101416;
-  --disponivel: #e3e9e4;
-  --disponivel-texto: #374151;
-  --vermelho-gamepoint: #d32f2f;
+    --branco: #f4f4f4;
+    --texto: #374151;
+    --links: #C4C4C4;
+    --preto: #101416;
+    --disponivel: #E3E9E4;
+    --disponivel-texto: #374151;
 }
 
 * {
-  padding: 0px;
-  margin: 0px;
-  font-family: "Geologica", sans-serif;
-  box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: "Geologica", sans-serif;
+
 }
 
+
 header {
-  background-color: var(--branco);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 22px 50px;
-  border-bottom: 1px solid #eee;
+
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    padding: 22px 50px;
 }
 
 .logo {
-  width: 136px;
-  height: 45px;
+    width: 136px;
+    height: 45px;
 }
 
+
 .menu-header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .menu-header a {
-  text-decoration: none;
-  color: var(--texto);
-  font-size: 1rem;
-  transition: color 0.1s ease 0.1s;
+    text-decoration: none;
+    color: var(--texto);
+    transition: color 0.1s ease 0.1s;
 }
 
 .menu-header a:hover {
-  color: var(--vermelho-gamepoint);
+     color: red;
 }
 
-.menu-header img {
-  height: 20px;
-  width: auto;
-  cursor: pointer;
-}
-.main-cadastro {
-  min-height: 80vh;
-  padding: 40px 20px;
-  text-align: center;
-  background-color: #fff;
-}
-
-.registration-form-section {
-  max-width: 500px;
-  margin: 40px auto;
-}
-
-.registration-form-section h2 {
-  font-size: 2rem;
-  color: var(--texto);
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.registration-form-section .subtitle {
-  color: var(--texto);
-  margin-bottom: 30px;
-}
-
-.role-selector {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-  border: none;
-  border-radius: 0;
-  gap: 20px;
-}
-
-.role-button {
-  flex-grow: 1;
-  padding: 10px 20px;
-  border: none;
-  background-color: #fff;
-  color: var(--texto);
-  font-weight: 500;
-  cursor: pointer;
-
-}
-
-.role-button.anfitriao-button {
-  border-right: 1px solid #ddd;
-  padding: 15px 35px;
-  border-radius: 150px;
-  background: #E6EAF0;
-  border: 0px;
-}
-
-.role-button.active {
-  background-color: var(--vermelho-gamepoint);
-  color: #fff;
-  font-weight: 600;
-  display: inline-flex;
-  padding: 15px 35px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 150px;
-  background: var(--Vermelho-base, #F33128);
-}
-
-/* Formulário */
-.registration-form {
-  text-align: left;
-}
-
-.input-group {
-  margin-bottom: 20px;
-}
-
-.input-group label {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--texto);
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  color: var(--texto);
-  background-color: #fcfcfc;
-}
-
-.input-group input::placeholder {
-  color: #aaa;
-}
-
-.checkbox-group {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 25px;
-}
-
-.checkbox-group input[type="checkbox"] {
-  margin-top: 4px;
-  margin-right: 10px;
-  min-width: 16px;
-  min-height: 16px;
-}
-
-.checkbox-group label {
-  font-size: 0.85rem;
-  color: #777;
-  line-height: 1.4;
-  cursor: pointer;
-}
-
-.submit-button {
-  width: 100%;
-  padding: 15px;
-  background-color: var(--preto);
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.submit-button:hover {
-  background-color: #222;
-}
 
 footer {
-  background-color: var(--preto);
-  padding: 60px 120px;
+    background-color: var(--preto);
+    padding: 60px 120px;
+
 }
 
 .links {
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0;
 }
 
 .bloco-de-links {
-  flex: 0 0 calc(100% / 6);
-  max-width: calc(100% / 6);
-  min-width: 170px;
-  box-sizing: border-box;
-  height: auto;
-  padding: 20px 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+    flex: 0 0 calc(100% / 6);
+    max-width: calc(100% / 6);
+    min-width: 170px;
+    box-sizing: border-box;
+    height: auto;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
 }
 
 .bloco-de-links h1 {
-  color: var(--branco);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 100%;
-  padding-bottom: 20px;
+    color: var(--branco);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    /* 20px */
+    padding-bottom: 20px;
+    
+
 }
 
 .bloco-de-links ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 0;
-  margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    
+
 }
 
 .bloco-de-links li {
-  padding-right: 0;
-  line-height: 100%;
+    padding-right: 0;
+    line-height: 100%;
 }
 
 .bloco-de-links a {
-  color: var(--links);
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  text-decoration: none;
-  transition: color 0.1s ease 0.1s;
-  display: inline-block;
-  width: 100%;
-  word-break: break-word;
+    color: var(--links);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    text-decoration: none;
+    transition: color 0.1s ease 0.1s;
+    display: inline-block;
+    width: 100%;
+    word-break: break-word;
 }
 
 .bloco-de-links a:hover {
-  color: var(--vermelho-gamepoint);
+    color: red;
+
+
 }
 
 footer hr {
-  border-color: #373e41;
-  margin: 50px auto;
-  width: 100%;
-  max-width: 100%;
-  padding: 0;
-  display: block;
-  box-sizing: border-box;
+    border-color: #373E41;
+    margin: 50px auto;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    display: block;
+    box-sizing: border-box;
 }
 
 .direitos {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 .direitos img {
-  width: 136px;
-  height: 45px;
+    width: 136px;
+    height: 45px;
 }
 
 .direitos p {
-  color: var(--branco);
+    color: var(--branco);
 }
 
-@media (max-width: 1300px) {
-  .links {
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
-
-  .bloco-de-links {
-    flex: 0 0 calc(100% / 3);
-    max-width: calc(100% / 3);
-    min-width: 170px;
-    box-sizing: border-box;
-    padding: 20px 10px;
-  }
+@media (max-width:1300px) {
+    .links {
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+    .bloco-de-links {
+        flex: 0 0 calc(100% / 3);
+        max-width: calc(100% / 3);
+        min-width: 170px;
+        box-sizing: border-box;
+        padding: 20px 10px;
+    }
 }
 
-@media (max-width: 800px) {
-  header {
-    padding: 22px 20px;
-  }
-
-  .bloco-de-links {
-    flex: 0 0 50%;
-    max-width: 50%;
-    min-width: 160px;
-  }
+@media (max-width:800px) {
+    .bloco-de-links {
+        flex: 0 0 50%;
+        max-width: 50%;
+        min-width: 160px;
+    }
 }
 
-@media (max-width: 600px) {
-  footer {
-    padding: 40px 20px;
-  }
-
-  .links {
-    flex-direction: column;
-  }
-
-  .bloco-de-links {
-    flex: unset;
-    max-width: unset;
-    min-width: unset;
-    width: 100%;
-  }
-
-  .direitos {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-meter {
-  height: 10px;
-  width: 100%;
-  background: #eee;
-}
-
-meter::-webkit-meter-optimum-value {
-  background: #2e7d32;
-  /* Verde */
-}
-
-meter::-webkit-meter-suboptimum-value {
-  background: #fbc02d;
-  /* Amarelo */
-}
-
-meter::-webkit-meter-even-less-good-value {
-  background: #d32f2f;
-  /* Vermelho */
+@media (max-width:600px) {
+    .links {
+        flex-direction: column;
+    }
+    .bloco-de-links {
+        flex: unset;
+        max-width: unset;
+        min-width: unset;
+        width: 100%;
+    }
 }
