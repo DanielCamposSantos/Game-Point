@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Point - Cadastro</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/cadastro.css">
+</head>
+
+<body>
+    <header>
+        <img src="images/logo.png" alt="logo do gamepoint" class="logo">
+
+        <nav class="menu-header">
+            <a href="#">Torne-se um anfitrião</a>
+            <img src="images/menu-button.png" alt="botão de menu">
+            <img src="images/search-button.png" alt="botão de pesquisa">
+        </nav>
+    </header>
+
+    <main class="main-cadastro">
+    <section class="registration-form-section">
+        <h2>Cadastre-se <span style="color: red;">agora</span></h2>
+        <p class="subtitle">Selecione uma opção</p>
+        
+        <div class="role-selector">
+            <button class="role-button jogador-button active" id="btn-jogador" data-form="form-jogador">Sou jogador</button>
+            <button class="role-button anfitriao-button" id="btn-anfitriao" data-form="form-anfitriao">Sou anfitrião</button>
+        </div>
+
+        <!-- Formulário Jogador -->
+        <form class="registration-form active" id="form-jogador">
+            <div class="input-group">
+                <label for="nome-jogador">Nome</label>
+                <input type="text" id="nome-jogador" name="nome" placeholder="Insira seu nome" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email-jogador">E-mail</label>
+                <input type="email" id="email-jogador" name="email" placeholder="Insira seu e-mail" required>
+            </div>
+
+            <div class="input-group">
+                <label for="telefone-jogador">Telefone</label>
+                <input type="tel" id="telefone-jogador" name="telefone" placeholder="(99) 99999-9999" required>
+            </div>
+
+            <div class="input-group">
+                <label for="cpf-jogador">CPF</label>
+                <input type="text" id="cpf-jogador" name="cpf" placeholder="Insira seu CPF" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senha-jogador">Senha</label>
+                <input type="password" id="senha-jogador" name="senha" placeholder="Crie uma senha" required>
+                <div class="senha-feedback" id="senha-feedback-jogador"></div>
+                <meter id="senha-meter-jogador" min="0" max="4" low="2" high="3" optimum="4" value="0"></meter>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="receber-info-jogador" name="receber-info">
+                <label for="receber-info-jogador">Desejo receber informações sobre promoções, ofertas e outros relacionados ao Game Point.</label>
+            </div>
+
+            <button type="submit" class="submit-button">Cadastre-se agora</button>
+        </form>
+
+        <!-- Formulário Anfitrião -->
+        <form class="registration-form" id="form-anfitriao">
+            <div class="input-group">
+                <label for="nome-anfitriao">Nome</label>
+                <input type="text" id="nome-anfitriao" name="nome" placeholder="Insira seu nome" required>
+            </div>
+
+            <div class="input-group">
+                <label for="email-anfitriao">E-mail</label>
+                <input type="email" id="email-anfitriao" name="email" placeholder="Insira seu e-mail" required>
+            </div>
+
+            <div class="input-group">
+                <label for="telefone-anfitriao">Telefone</label>
+                <input type="tel" id="telefone-anfitriao" name="telefone" placeholder="(99) 99999-9999" required>
+            </div>
+
+            <div class="input-group">
+                <label for="documento-anfitriao">CPF ou CNPJ</label>
+                <input type="text" id="documento-anfitriao" name="documento" placeholder="Insira seu CPF ou CNPJ" required>
+            </div>
+
+            <div class="input-group">
+                <label for="endereco-anfitriao">Endereço</label>
+                <input type="text" id="endereco-anfitriao" name="endereco" placeholder="Insira seu endereço completo" required>
+            </div>
+
+            <div class="input-group">
+                <label for="cidade-anfitriao">Cidade</label>
+                <input type="text" id="cidade-anfitriao" name="cidade" placeholder="Insira sua cidade" required>
+            </div>
+
+            <div class="input-group">
+                <label for="estado-anfitriao">Estado</label>
+                <select id="estado-anfitriao" name="estado" required>
+                    <option value="">Selecione seu estado</option>
+                    <option value="AC">Acre</option>
+                    <option value="AL">Alagoas</option>
+                    <option value="AP">Amapá</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo</option>
+                    <option value="GO">Goiás</option>
+                    <option value="MA">Maranhão</option>
+                    <option value="MT">Mato Grosso</option>
+                    <option value="MS">Mato Grosso do Sul</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="PA">Pará</option>
+                    <option value="PB">Paraíba</option>
+                    <option value="PR">Paraná</option>
+                    <option value="PE">Pernambuco</option>
+                    <option value="PI">Piauí</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="RN">Rio Grande do Norte</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RO">Rondônia</option>
+                    <option value="RR">Roraima</option>
+                    <option value="SC">Santa Catarina</option>
+                    <option value="SP">São Paulo</option>
+                    <option value="SE">Sergipe</option>
+                    <option value="TO">Tocantins</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label for="cep-anfitriao">CEP</label>
+                <input type="text" id="cep-anfitriao" name="cep" placeholder="Insira seu CEP" required>
+            </div>
+
+            <div class="input-group">
+                <label for="senha-anfitriao">Senha</label>
+                <input type="password" id="senha-anfitriao" name="senha" placeholder="Crie uma senha" required>
+                <div class="senha-feedback" id="senha-feedback-anfitriao"></div>
+                <meter id="senha-meter-anfitriao" min="0" max="4" low="2" high="3" optimum="4" value="0"></meter>
+            </div>
+
+            <div class="checkbox-group">
+                <input type="checkbox" id="receber-info-anfitriao" name="receber-info">
+                <label for="receber-info-anfitriao">Desejo receber informações sobre promoções, ofertas e outros relacionados ao Game Point.</label>
+            </div>
+
+            <button type="submit" class="submit-button">Cadastre-se agora</button>
+        </form>
+    </section>
+</main>
+    <footer>
+        <section class="links">
+            <section class="bloco-de-links">
+                <h1>Links rápidos</h1>
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Esportes disponíveis</a></li>
+                    <li><a href="#">Quadras mais próximas</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </section>
+
+            <section class="bloco-de-links">
+                <h1>Anfitrião</h1>
+                <ul>
+                    <li><a href="#">Área do anfitrião</a></li>
+                    <li><a href="#">Cadastre sua quadra</a></li>
+                    <li><a href="#">Avaliações</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </section>
+
+            <section class="bloco-de-links">
+                <h1>Locatário</h1>
+                <ul>
+                    <li><a href="#">Área do locatário</a></li>
+                    <li><a href="#">Histórico de locações</a></li>
+                    <li><a href="#">Avaliações</a></li>
+                    <li><a href="#">Suporte</a></li>
+                </ul>
+            </section>
+
+            <section class="bloco-de-links">
+                <h1>Atendimento</h1>
+                <ul>
+                    <li><a href="#">Central de ajuda</a></li>
+                    <li><a href="#">Cancelamento</a></li>
+                    <li><a href="#">Reporte um problema</a></li>
+                    <li><a href="#">Segurança</a></li>
+                </ul>
+            </section>
+
+            <section class="bloco-de-links">
+                <h1>Redes sociais</h1>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Youtube</a></li>
+                </ul>
+            </section>
+
+            <section class="bloco-de-links">
+                <h1>Aviso legal</h1>
+                <ul>
+                    <li><a href="#">Políticas de privacidade</a></li>
+                    <li><a href="#">Termos de uso</a></li>
+                </ul>
+            </section>
+        </section>
+
+        <hr class="footer-separator">
+
+        <aside class="direitos">
+            <div class="logo-wrapper">
+                <img src="images/logo-branca.png" alt="logo gamepoint">
+            </div>
+            <p>2025 © Todos os direitos reservados</p>
+        </aside>
+    </footer>
+      <script src="JS/cadastro.js"></script>
+
+</body>
+
+</html>
