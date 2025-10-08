@@ -1,11 +1,29 @@
-const emailInput = document.getElementById('email')
-const senhaInput = document.getElementById('senha')
-const regexEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/
-const email = emailInput.value
-const senha = senhaInput.value
+const loginContainer = document.getElementById('login');
+const emailInput = document.getElementById('email');
+const senhaInput = document.getElementById('senha');
 
-addEventListener('click',(e)=>{
-    if (e.target.id === 'entrar'){
-        alert(email)
+function entrar() {
+    // Remove qualquer mensagem existente
+    const mensagemExistente = loginContainer.querySelector('.vazio');
+    if (mensagemExistente) {
+        mensagemExistente.remove();
     }
-})
+    
+    if (emailInput.value && senhaInput.value) {
+        window.location.href = '/dashboard.html';
+    } else {
+        const mensagemSpan = document.createElement('span');
+        mensagemSpan.textContent = 'Insira o email e a senha para entrar';
+        mensagemSpan.classList.add('vazio');
+        
+        loginContainer.appendChild(mensagemSpan);
+        
+        setTimeout(() => {
+            mensagemSpan.remove();
+        }, 2000);
+    }
+}
+
+
+
+

@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Login</title>
         <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/login.css">
     </head>
     <body>
         <header>
@@ -16,7 +17,7 @@
             </nav>
         </header>
         <main>
-            <section class="login">
+            <section class="login" id="login">
                 <h1>Faça seu <mark>login</mark></h1>
                 <p>Ainda não possui conta? <a href="#">Cadastre-se</a></p>
 
@@ -28,8 +29,7 @@
                 <input type="password" name="password" id="senha"
                     placeholder="Insira sua senha">
 
-                <button id="entrar">Entrar</button>
-                <div id="erro" class="erro">Por favor, insira um e-mail válido</div>
+                <button id="entrar" onclick= "entrar()  " >Entrar</button>
                 <aside>Esqueceu sua senha? <a href="#">Clique aqui</a></aside>
             </section>
 
