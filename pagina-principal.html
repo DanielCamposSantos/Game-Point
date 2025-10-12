@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gamepoint</title>
+        <link rel="stylesheet" href="CSS/style.css">
+        <link rel="stylesheet" href="CSS/pagina-principal.css">
+    </head>
+    <body>
+        <header>
+            <img src="images/logo.png" alt="logo do gamepoint" class="logo">
+            <nav class="menu-header">
+                <a href="#">Torne-se um anfitrião</a>
+                <img src="images/menu-button.png" alt="botão de menu">
+                <img src="images/search-button.png" alt="botão de pesquisa">
+            </nav>
+        </header>
+        <main>
+            <section class="fundo">
+                <section class="boas-vidas">
+                    <h1>Bem-vindo ao <mark>Game Point!</mark></h1>
+                    <p>Encontre quadras e jogadores para o seu próximo jogo de
+                        forma rápida e segura.</p>
+                    <section id="bloco-de-filtros">
+                        <div class="filtro ">
+                            <label for="local">Selecione sua localização</label>
+                            <select name="local" id="local">
+                                <option disabled selected>Selecione o seu
+                                    bairro</option>
+                                <option value="brotas"
+                                    class="escolha">Brotas</option>
+                                <option value="pituacu"
+                                    class="escolha">Imbuí</option>
+                                <option value="pituacu"
+                                    class="escolha">Pituaçu</option>
+                            </select>
+                        </div>
+                        <div class="filtro ">
+                            <label for="esporte">Selecione o esporte</label>
+                            <select name="esporte" id="esporte">
+                                <option disabled selected>Selecione o esporte
+                                    desejado</option>
+                                <option value="futebol"
+                                    class="escolha">Futebol</option>
+                                <option value="volei"
+                                    class="escolha">Vôlei</option>
+                                <option value="basquete"
+                                    class="escolha">Basquete</option>
+                            </select>
+                        </div>
+                        <div class="filtro">
+                            <label for="pessoas">Selecione a quantidade de
+                                pessoas</label>
+                            <select name="pessoas" id="pessoas">
+                                <option disabled selected>Selecione a quantidade
+                                    de pessoas</option>
+                                <option value="2pessoas" class="escolha">2
+                                    pessoas</option>
+                                <option value="4pessoas" class="escolha">4
+                                    pessoas</option>
+                                <option value="6pessoas" class="escolha">6
+                                    pessoas</option>
+                                <option value="semLimites" class="escolha">Sem
+                                    limites</option>
+                            </select>
+                        </div>
+                        <button id="buscar">
+                            Buscar
+                        </button>
+                        <div id="addAuto">
+                            <input type="checkbox" name="checkbox"
+                                id="checkbox">
+                            <p>Você deseja que mais pessoas sejam adicionadas
+                                automaticamente?</p>
+                        </div>
+                    </section>
+                </section>
+            </section>
+            <section id="esportes-disponiveis-container">
+                <section id="esportes-disponiveis">
+                    <section class="descricao-bloco">
+                        <h2>Esportes <mark>disponíveis</mark></h2>
+                        <p>Escolha sua modalidade favorita e encontre quadras
+                            para jogar:</p>
+                    </section>
+                    <section id="imagem-esporte-container">
+                        <div class="tipo-esporte">
+                            <img src="images/futebol-generico.png"
+                                alt="futebol">
+                            <h3>Futebol</h3>
+                            <p>Encontre quadras de society e campos disponíveis
+                                perto de você.</p>
+                        </div>
+                        <div class="tipo-esporte">
+                            <img src="images/basquete-generico.png"
+                                alt="basquete">
+                            <h3>Basquete</h3>
+                            <p>Jogue nas quadras mais próximas.</p>
+                        </div>
+                        <div class="tipo-esporte">
+                            <img src="images/volei-generico.png" alt="volei">
+                            <h3>Vôlei</h3>
+                            <p>Reserve quadras de areia ou cobertas.</p>
+                        </div>
+                    </section>
+                    <div id="link-quadra">
+                        <a href="#">Veja as quadras disponíveis</a>
+                        <img src="images/link-seta.png" alt="link">
+                    </div>
+                </section>
+                <picture id="test">
+
+                </picture>
+               
+            </section>
+        </main>
+        <footer>
+            <section class="links">
+                <section class="bloco-de-links">
+                    <h1>Links Rápidos</h1>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Esportes disponíveis</a></li>
+                        <li><a href="#">Quadras mais próximas</a></li>
+                        <li><a href="#">Suporte</a></li>
+                    </ul>
+                </section>
+                <section class="bloco-de-links">
+                    <h1>Anfitrião</h1>
+                    <ul>
+                        <li><a href="#">Área do locatário</a></li>
+                        <li><a href="#">Histórico de locações</a></li>
+                        <li><a href="#">Avaliações</a></li>
+                        <li><a href="#">Suporte</a></li>
+                    </ul>
+                </section>
+                <section class="bloco-de-links">
+                    <h1>Locatário</h1>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="#">Esportes disponíveis</a></li>
+                        <li><a href="#">Quadras mais próximas</a></li>
+                        <li><a href="#">Suporte</a></li>
+                    </ul>
+                </section>
+                <section class="bloco-de-links">
+                    <h1>Atendimento</h1>
+                    <ul>
+                        <li><a href="#">Central de ajuda</a></li>
+                        <li><a href="#">Cancelamento</a></li>
+                        <li><a href="#">Reporte um problema</a></li>
+                        <li><a href="#">Segurança</a></li>
+                    </ul>
+                </section>
+                <section class="bloco-de-links">
+                    <h1>Redes sociais</h1>
+                    <ul>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Youtube</a></li>
+                    </ul>
+                </section>
+                <section class="bloco-de-links">
+                    <h1>Aviso legal</h1>
+                    <ul>
+                        <li><a href="#">Políticas de privacidade</a></li>
+                        <li><a href="#">Termos de uso</a></li>
+                    </ul>
+                </section>
+            </section>
+            <hr>
+            <aside class="direitos">
+                <img src="images/logo-branca.png" alt="logo gamepoint">
+                <p>2025 © Todos os direitos reservados</p>
+            </aside>
+        </footer>
+    </body>
+</html>

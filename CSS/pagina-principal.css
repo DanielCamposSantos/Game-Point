@@ -27,6 +27,7 @@ mark {
     width: 100%;
     text-align: center;
     padding-bottom: 50px;
+
 }
 
 .boas-vidas>h1 {
@@ -44,7 +45,7 @@ mark {
     padding-bottom: 30px;
 }
 
-.boas-vidas mark {
+.boas-vidas>mark {
     background-color: transparent;
     background-image: linear-gradient(90deg, #F43028 0%, #F9605A 100%);
     background-clip: text;
@@ -57,6 +58,7 @@ mark {
     grid-template-columns: repeat(4, auto);
     justify-content: space-evenly;
     justify-items: center;
+
 }
 
 label {
@@ -89,6 +91,7 @@ select {
     background: rgba(112, 112, 112, 0.59);
     cursor: pointer;
     color: white;
+
 }
 
 .escolha {
@@ -104,6 +107,9 @@ select {
 
 
 #buscar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 25px 35px;
     gap: 10px;
     border-radius: 10px;
@@ -113,6 +119,7 @@ select {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
+
 }
 
 #addAuto {
@@ -126,28 +133,19 @@ select {
 }
 
 #esportes-disponiveis-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding-right: 687px;
-    box-sizing: border-box;
+    background-image: url(../images/jogador.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+
 }
 
 #esportes-disponiveis {
     padding: 97px 150px;
     width: 100%;
     box-sizing: border-box;
-}
 
-#jogador-gamepoint {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-    width: auto;
-    max-width: 687px;
-    object-fit: cover;
-    z-index: 1;
+
 }
 
 
@@ -175,87 +173,75 @@ select {
 
 #imagem-esporte-container {
     display: flex;
-    grid-column: 1;
     gap: 40px;
-}
-
-
-
-.imagem-esporte {
-    background-image: url('../images/link-imagem.png');
-    background-repeat: no-repeat;
-    background-position: right top;
-    z-index: 2;
 
 }
 
-
-.imagem-esporte>h3 {
+.tipo-esporte>h3 {
     color: var(--Preto, #101416);
     font-size: 24px;
     font-weight: 500;
     line-height: 100%;
-    /* 24px */
-
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.imagem-esporte>p {
+.tipo-esporte>p {
     color: var(--Texto-menu, #374151);
     font-size: 15px;
-    font-style: normal;
     font-weight: 300;
     line-height: 120%;
+    /* 18px */
+    height: 250px;
+    width: 250px;
 }
 
 
 
-#link-quadra {
-    grid-column: 1;
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (max-width:1350px) {
-
+@media (max-width:1700px) {
     #bloco-de-filtros {
-
         display: flex;
-
         gap: 20px;
-
         flex-flow: column wrap;
-
         justify-content: center;
+        align-items: center;
+    }
 
+    #buscar {
+        order: 2;
+    }
+
+}
+
+@media (max-width:1960px) {
+    #esportes-disponiveis-container {
+        background-image: none;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #esportes-disponiveis {
+        display: flex;
+        flex-direction: column;
         align-items: center;
 
     }
+  
 
 
 
-    #buscar {
-
-        order: 2;
-
+    #test {
+        display: flex;
+        
+        background-image: url(../images/jogador.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 658px;
+        height: 649px;
     }
-
-
-
 }
+
+

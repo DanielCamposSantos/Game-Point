@@ -13,6 +13,7 @@ main>h1 {
 
 #partida-container {
     display: flex;
+    justify-content: space-between;
     gap: 161px;
 }
 
