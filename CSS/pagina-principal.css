@@ -133,6 +133,8 @@ select {
 }
 
 #esportes-disponiveis-container {
+    background-color: #FAFAFA;
+    ;
     background-image: url(../images/jogador.png);
     background-repeat: no-repeat;
     background-position: right;
@@ -158,6 +160,7 @@ select {
     line-height: 100%;
     /* 30px */
     padding-bottom: 15px;
+
 }
 
 
@@ -175,6 +178,14 @@ select {
     display: flex;
     gap: 40px;
 
+
+}
+
+.tipo-esporte>img {
+    width: 250px;
+    height: 250px;
+
+
 }
 
 .tipo-esporte>h3 {
@@ -184,6 +195,9 @@ select {
     line-height: 100%;
     padding-top: 15px;
     padding-bottom: 15px;
+
+
+
 }
 
 .tipo-esporte>p {
@@ -194,8 +208,113 @@ select {
     /* 18px */
     height: 250px;
     width: 250px;
+
 }
 
+#link-quadra {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#link-quadra>a {
+    color: var(--Texto-menu, #374151);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    /* 18px */
+}
+
+
+
+
+
+@media (max-width:1960px) {
+
+    .descricao-bloco>h2 {
+        font-size: 70px;
+
+    }
+
+
+    .descricao-bloco>p {
+        font-size: 36px;
+
+    }
+
+
+
+
+    #esportes-disponiveis-container {
+        display: flex;
+        flex-direction: column;
+        background-image: none;
+        text-align: center;
+    }
+
+    #imagem-esporte-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .tipo-esporte {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+
+    }
+
+    .tipo-esporte>img {
+        width: 70%;
+        height: 100%;
+
+
+    }
+
+
+
+    .tipo-esporte>h3 {
+        font-size: 60px;
+        text-align: center;
+
+    }
+
+
+
+    .tipo-esporte>p {
+        width: 100%;
+        font-size: 30px;
+        text-align: center;
+
+    }
+
+    #jogador-mobile {
+        background-image: url(../images/jogador-mobile.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+        padding: 50%;
+
+    }
+
+
+    #link-quadra {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    #link-quadra>a {
+        font-size: 30px;
+
+    }
+
+}
 
 
 
@@ -212,36 +331,45 @@ select {
         order: 2;
     }
 
+    .tipo-esporte>img {
+        width: 70%;
+
+
+    }
+
+    .descricao-bloco>h2 {
+        font-size: 50px;
+
+    }
+
+
+    .descricao-bloco>p {
+        font-size: 25px;
+
+    }
+
+    .tipo-esporte>h3 {
+        padding-top: 50px;
+        font-size: 40px;
+
+    }
+
+
+
+    .tipo-esporte>p {
+        font-size: 25px;
+
+    }
 }
 
-@media (max-width:1960px) {
-    #esportes-disponiveis-container {
-        background-image: none;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+
+@media (max-width:900px) {
+    
+
+    .tipo-esporte>img {
+        width: 100%;
+
+
     }
 
-    #esportes-disponiveis {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-    }
-  
-
-
-
-    #test {
-        display: flex;
-        
-        background-image: url(../images/jogador.png);
-        background-repeat: no-repeat;
-        background-position: center center;
-        width: 658px;
-        height: 649px;
-    }
 }
-
-
