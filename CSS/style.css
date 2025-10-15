@@ -20,6 +20,20 @@
 }
 
 
+html, body {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
 header {
     background-color: var(--branco);
     display: flex;
