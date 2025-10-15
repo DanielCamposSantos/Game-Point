@@ -1,0 +1,532 @@
+mark {
+    background-color: transparent;
+    color: #F43028;
+}
+
+
+
+.fundo {
+    background-image: url('../images/background-welcome.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.boas-vidas {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-end;
+    color: #FFF;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 50px;
+
+}
+
+.boas-vidas>h1 {
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+}
+
+.boas-vidas>p {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 120%;
+    padding-bottom: 30px;
+}
+
+.boas-vidas>mark {
+    background-color: transparent;
+    background-image: linear-gradient(90deg, #F43028 0%, #F9605A 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#bloco-de-filtros {
+    display: grid;
+    gap: 11px;
+    grid-template-columns: repeat(4, auto);
+    justify-content: space-evenly;
+    justify-items: center;
+
+}
+
+label {
+    color: #ADADAD;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 100%;
+    /* 14px */
+    padding-bottom: 10px;
+}
+
+
+
+.filtro {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    text-align: left;
+
+}
+
+select {
+    display: flex;
+    width: 360px;
+    padding: 25px 30px;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(112, 112, 112, 0.59);
+    cursor: pointer;
+    color: white;
+
+}
+
+.escolha {
+    padding: 25px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    background: rgba(56, 56, 56, 0.70);
+    color: #FFF;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+}
+
+
+#buscar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 35px;
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--Gradiente, linear-gradient(90deg, #F43028 0%, #F9605A 100%));
+    border: none;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+}
+
+#addAuto {
+    display: flex;
+    justify-items: center;
+    grid-area: 4/3;
+    gap: 15px;
+    color: #D8D8D8;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+#esportes-disponiveis-container {
+    background-color: #FAFAFA;
+    ;
+    background-image: url(../images/jogador.png);
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+
+}
+
+#esportes-disponiveis {
+    padding: 97px 150px;
+    width: 100%;
+    box-sizing: border-box;
+
+
+}
+
+
+
+.descricao-bloco>h2 {
+    color: var(--Preto, #101416);
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    /* 30px */
+    padding-bottom: 15px;
+
+}
+
+
+.descricao-bloco>p {
+    color: var(--Preto, #101416);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 100%;
+    /* 16px */
+    padding-bottom: 40px;
+}
+
+#imagem-esporte-container {
+    display: flex;
+    gap: 40px;
+
+
+}
+
+.tipo-esporte>img {
+    width: 250px;
+    height: 250px;
+
+
+}
+
+.tipo-esporte>h3 {
+    color: var(--Preto, #101416);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+
+
+}
+
+.tipo-esporte>p {
+    color: var(--Texto-menu, #374151);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 120%;
+    /* 18px */
+    height: 250px;
+    width: 250px;
+
+}
+
+#link-quadra {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#link-quadra>a {
+    color: var(--Texto-menu, #374151);
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 100%;
+    /* 18px */
+}
+
+#quadras-proximas-container {
+    padding: 97px 150px;
+}
+
+
+#esporte-proximo-container {
+    display: flex;
+}
+
+
+.esporte-proximo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+
+}
+
+.esporte-proximo>img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.esporte-proximo>h3 {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: var(--Preto, #101416);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.esporte-proximo>ul {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+
+}
+
+.esporte-proximo>ul>li {
+    color: var(--Texto-menu, #374151);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 120%;
+    /* 18px */
+
+}
+
+
+.avaliacao::before {
+    content: url(../images/Star\ 1.png);
+    margin-right: 8px;
+
+}
+
+.pessoas::before {
+    content: url(../images/Pessoa.png);
+    margin-right: 8px;
+}
+
+
+#suporte-container {
+    background: #E6342C;
+    padding: 80px 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: stretch;
+    gap: 114px;
+}
+
+
+#suporte-container>h1 {
+    color: #FFF;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 100%;
+    /* 42px */
+}
+
+
+
+#suporte-container>p {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 120%;
+    /* 24px */
+}
+
+#suporte-container>button {
+    display: flex;
+    padding: 20px 35px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 150px;
+    border: 1px solid #FFF;
+    background-color: transparent;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 100%;
+    /* 18px */
+}
+
+#suporte-container>button::after {
+
+    content: url(../SVG/seta-branca.svg);
+}
+
+
+@media (max-width:1960px) {
+
+    .descricao-bloco>h2 {
+        font-size: 70px;
+    }
+
+    .descricao-bloco>p {
+        font-size: 36px;
+    }
+
+    #esportes-disponiveis-container {
+        display: flex;
+        flex-direction: column;
+        background-image: none;
+
+
+    }
+
+    #imagem-esporte-container {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+    }
+
+    .tipo-esporte {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .tipo-esporte>img {
+        width: 50%;
+        height: 100%;
+    }
+
+    .tipo-esporte>h3 {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .tipo-esporte>p {
+        width: 100%;
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #esporte-proximo-container {
+        gap: 200px;
+    }
+
+
+    .esporte-proximo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .esporte-proximo>img {
+        width: 50%;
+        height: 100%;
+    }
+
+    .esporte-proximo>h3 {
+        font-size: 60px;
+        text-align: center;
+    }
+
+    .esporte-proximo>ul>li {
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #jogador-mobile {
+        background-image: url(../images/jogador-mobile.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: cover;
+        padding: 50%;
+    }
+
+    #link-quadra {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    #link-quadra>a {
+        font-size: 30px;
+    }
+
+
+
+    #esporte-proximo-container {
+        flex-flow: column
+    }
+
+
+
+}
+
+
+
+@media (max-width:1700px) {
+#suporte-container {
+        flex-direction: column;
+    }
+    #bloco-de-filtros {
+        display: flex;
+        gap: 20px;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #buscar {
+        order: 2;
+    }
+
+    .tipo-esporte>img {
+        width: 70%;
+
+
+    }
+
+    .descricao-bloco>h2 {
+        font-size: 50px;
+
+    }
+
+
+    .descricao-bloco>p {
+        font-size: 25px;
+
+    }
+
+    .tipo-esporte>h3 {
+        padding-top: 50px;
+        font-size: 40px;
+
+    }
+
+
+
+    .tipo-esporte>p {
+        font-size: 25px;
+
+    }
+
+    .esporte-proximo>img {
+        width: 70%;
+    }
+
+    .esporte-proximo>h3 {
+        padding-top: 50px;
+        font-size: 40px;
+    }
+
+    .esporte-proximo>ul>li {
+        font-size: 25px;
+    }
+
+    #esporte-proximo-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+@media (max-width:900px) {
+    
+
+    .tipo-esporte>img {
+        width: 100%;
+
+
+    }
+
+    .esporte-proximo>img {
+        width: 100%;
+    }
+
+}
