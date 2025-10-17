@@ -1,0 +1,194 @@
+main {
+    padding: 70px 100px;
+}
+
+main>h1 {
+    color: #000;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 100%;
+}
+
+hr {
+    border: 1px solid #C7C7C7;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+
+
+#partida-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+
+}
+
+#partida-container>h2 {
+    color: #101416;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+#partida-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 35px;
+}
+
+#partida-info>span {
+    width: 2px;
+    align-self: stretch;
+    background: #F33128;
+}
+
+
+
+#partida-indo>p {
+    color: #374151;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 100%;
+}
+
+#partida-info strong {
+    font-weight: 500;
+}
+
+#botoes-partida {
+    display: flex;
+    gap: 45px;
+
+}
+
+#botoes-partida>button {
+    display: flex;
+    width: 301px;
+    height: 98px;
+    padding: 33px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    color: #FFF;
+    text-align: center;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 100%;
+    border: none;
+}
+
+#iniciar {
+    background: #F33128;
+}
+
+#encerrar {
+    background: #374151;
+}
+
+
+#historico {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    gap: 45px;
+    margin-bottom: 145px;
+
+}
+
+#historico>h2 {
+    color: #000;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+#quadras-historico {
+    display: flex;
+    gap: 45px;
+
+}
+
+
+.quadra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+
+
+
+}
+
+.quadra>img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.quadra>h3 {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: var(--Preto, #101416);
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+}
+
+.quadra>ul {
+    width: auto;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+
+}
+
+.quadra>ul>li {
+    color: var(--Texto-menu, #374151);
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 120%;
+    /* 18px */
+
+}
+
+
+.avaliacao::before {
+    content: url(../images/Star\ 1.png);
+    margin-right: 8px;
+
+}
+
+.pessoas::before {
+    content: url(../images/Pessoa.png);
+    margin-right: 8px;
+}
+
+
+
+
+
+
+
+
+@media (max-width:1700px) {
+    #quadras-historico {
+        flex-flow: row wrap;
+
+    }
+
+    #botoes-partida {
+    flex-flow: column;
+
+}
+}
