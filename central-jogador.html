@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Partida Atual</title>
+        <title>Login</title>
         <link rel="stylesheet" href="CSS/style.css">
-        <link rel="stylesheet" href="CSS/partida-atual.css">
+        <link rel="stylesheet" href="CSS/central-jogador.css">
     </head>
     <body>
         <header>
@@ -17,68 +17,76 @@
             </nav>
         </header>
         <main>
-            <h1>Partida atual</h1>
+            <h1>Central do Jogador</h1>
+            <hr>
             <section id="partida-container">
-                <section id="tempo-container">
-                    <meter value="0.5" id="meter-partida"></meter>
-                    <div id="temporizador">
-                        <div id="min">00</div>
-                        <span style="line-height: 75%;">:</span>
-                        <div id="seg">00</div>
-                    </div>
-                    <p>Previsão de encerramento: <span
-                            id="previsao">16h45</span></p>
-                    <div id="botoes">
-                        <button id="iniciar" onclick="iniciar()">Iniciar
-                            partida</button>
-
-                        <button id="encerrar" onclick="encerrar()">Encerrar
-                            jogo</button>
-                        <button id="pausar" onclick="pausar()">Pausa</button>
-                    </div>
-                </section>
-                <section id="placar-container">
-                    <h2>Placar do jogo</h2>
-                    <section id="placar">
-
-                        <div></div>
-                        <h3>Time A</h3>
-                        <div id="placarA" class="pontuacao">00</div>
-                        <div id="placarB" class="pontuacao">00</div>
-                        <h3>Time B</h3>
-                    </section>
-
-                    <hr>
-
-                    <section id="alterar-placar">
-                        <button id="diminuirA"
-                            class="alterar-placar-btt">-GOL</button>
-                        <h3>Time A</h3>
-                        <button id="aumentarA"
-                            class="alterar-placar-btt">+GOL</button>
-
-                        <button id="diminuirB"
-                            class="alterar-placar-btt">-GOL</button>
-                        <h3>Time B</h3>
-                        <button id="aumentarB"
-                            class="alterar-placar-btt">+GOL</button>
-
-                    </section>
-
-                </section>
-            </section>
-            <section id="localizacao-container">
-                <h1>Dados da locação</h1>
-                <div id="dados-local">
-                    <h2>Localização</h2>
-                    <p>R. Prof. Alda Leal, 26 - Brotas, Salvador - BA, 40286-340</p>
-                    <h2>Horário</h2>
-                     <p>14h até 17h (3 horas de locação)</p>
-                    <h2>Valor</h2>
-                     <p>R$15,00 por jogador</p>
-                    <h2>Jogadores</h2>
-                     <p>8</p>
+                <h2>Partida atual</h2>
+                <div id="partida-info">
+                    <p>Tempo de partida: <strong>2h59m08s</strong></p>
+                    <span></span>
+                    <p>Quadra: <strong>Brotas | Salvador-BA</strong></p>
                 </div>
+                <div id="botoes-partida">
+                    <button id="iniciar">INICIA AGORA</button>
+                    <button id="encerrar">ENCERRAR</button>
+                </div>
+            </section>
+            <hr>
+            <section id="historico">
+                <h2>Histórico</h2>
+                <section id="quadras-historico">
+                    <div class="quadra">
+                        <img src="images/Quadra-brotas.png"
+                            alt="foto da Quadra de Brotas">
+                        <h3>Quadra Brotas</h3>
+                        <ul>
+                            <li class="preco">R$ 13 por pessoa</li>
+                            <li class="avaliacao">4,85</li>
+                            <li class="pessoas">8</li>
+                        </ul>
+                    </div>
+                    <div class="quadra">
+                        <img src="images/campo-pituba.png"
+                            alt="foto do Campo da Pituba">
+                        <h3>Campo Pituba</h3>
+                        <ul>
+                            <li class="preco">R$ 13 por pessoa</li>
+                            <li class="avaliacao">4,85</li>
+                            <li class="pessoas">8</li>
+                        </ul>
+                    </div>
+                    <div class="quadra">
+                        <img src="images/quadra-pituaçu.png"
+                            alt="foto da Quadra Pituaçu">
+                        <h3>Quadra Pituaçu</h3>
+                        <ul>
+                            <li class="preco">R$ 13 por pessoa</li>
+                            <li class="avaliacao">4,85</li>
+                            <li class="pessoas">8</li>
+                        </ul>
+                    </div>
+                    <div class="quadra">
+                        <img src="images/quadra-imbui.png"
+                            alt="foto da Quadra Imbuí">
+                        <h3>Quadra Imbuí</h3>
+                        <ul>
+                            <li class="preco">R$ 13 por pessoa</li>
+                            <li class="avaliacao">4,85</li>
+                            <li class="pessoas">8</li>
+                        </ul>
+                    </div>
+                    <div class="quadra">
+                        <img src="images/Quadra-costa-azul.png"
+                            alt="foto da Quadra Costa Azul">
+                        <h3>Quadra Costa Azul</h3>
+                        <ul>
+                            <li class="preco">R$ 13 por pessoa</li>
+                            <li class="avaliacao">4,85</li>
+                            <li class="pessoas">8</li>
+                        </ul>
+                    </div>
+                </section>
+
             </section>
         </main>
         <footer>
@@ -143,6 +151,5 @@
 
         </footer>
     </body>
-    <script src="JS/partida-timer.js"></script>
-    <script src="JS/placar.js"></script>
+    <script src="JS/auth.js"></script>
 </html>
