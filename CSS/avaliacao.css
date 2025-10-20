@@ -40,6 +40,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    align-items: center;
     flex-grow: 1;
     gap: 15px;
 }
@@ -56,14 +57,21 @@
 }
 
 .estrelas{
-    font-size: 22px;
-    color: #FFD700;
+    font-size: 24px;
     cursor: pointer;
     white-space: nowrap;
+    color: #888888;
+    
 }
 
-.estrelas .empty {
-    color: #ddd;
+
+.full{
+    color: #FFD700;
+}
+
+
+.empty {
+    color: #888888;
 }
 
 .estrelas:hover{
