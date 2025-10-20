@@ -1,30 +1,6 @@
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #FFFFFF;
-    margin: 0;
-    padding: 0;
-    color: #222;
-}
-
-.topo{
-    display: flex;
-    align-items: center;
-    padding: 15px 50px;
-    background: #F4F4F4;
-    border-bottom: 1px solid #eee;
-}
-.logo{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.logo img{
-    width: 90px;
-}
-
 .avaliacao-box{
     background: #fff;
-    width: 90%;
+    width: 80%;
     max-width: 900px;
     margin: 40px auto;
     border-radius: 10px;
@@ -42,6 +18,7 @@ body{
 }
 
 .avaliacoes {
+    padding-top: 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 25px 40px;
@@ -110,55 +87,9 @@ body{
     background-color: #111827;
 }
 
-footer{
-    background: #101416;
-    color: #ddd;
-    padding-top: 40px;
-    margin-top: 50px;
-}
-.rodape-box{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 0 50px 40px 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-    gap: 20px;
-}
-.coluna {
-    min-width: 150px;
-}
-.coluna h4{
-    color: #fff;
-    margin-bottom: 15px;
-    font-size: 1em;
-}
-.coluna p{
-    margin: 8px 0;
-    color: #bbb;
-    font-size: 14px;
-    cursor: pointer;
-}
-.coluna p:hover {
-    color: #fff;
-}
-
-.rodape-final{
-    text-align: center;
-    border-top: 1px solid #374151;
-    padding: 20px;
-    font-size: 14px;
-    color: #bbb;
-}
-.logo-rodape {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-.logo-rodape img {
-    width: 60px;
-} 
-.logo-rodape p {
- margin:0;
+@media (max-width:700px){
+    .avaliacoes{
+        display: flex;
+        flex-direction: column;
+    }
 }
