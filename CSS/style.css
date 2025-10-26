@@ -20,7 +20,8 @@
 }
 
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -58,6 +59,8 @@ header {
     color: var(--texto);
     transition: color 0.1s ease 0.1s;
 }
+
+
 
 .menu-header a:hover {
     color: var(--vermelho);
@@ -174,6 +177,7 @@ footer hr {
         box-sizing: border-box;
         padding: 20px 10px;
     }
+
 }
 
 @media (max-width:800px) {
@@ -182,6 +186,7 @@ footer hr {
         max-width: 50%;
         min-width: 160px;
     }
+
 }
 
 @media (max-width:600px) {
@@ -195,4 +200,9 @@ footer hr {
         min-width: unset;
         width: 100%;
     }
+
+    .menu-header>a {
+    display: none;
+}
+
 }
