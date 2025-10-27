@@ -249,6 +249,7 @@ select {
     width: 250px;
     height: 250px;
     object-fit: cover;
+    cursor: pointer;
 }
 
 .esporte-proximo>h3 {

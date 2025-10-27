@@ -11,7 +11,7 @@ function entrar() {
     }
     
     if (emailInput.value && senhaInput.value) {
-        window.location.href = '#';
+        window.location.href = 'pagina-principal.html';
     } else {
         const mensagemSpan = document.createElement('span');
         mensagemSpan.textContent = 'Insira o email e a senha para entrar';
