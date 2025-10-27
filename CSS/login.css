@@ -148,7 +148,7 @@ mark {
 
 
 /* Para telas menores (mobile) */
-@media (max-width: 1490px) {
+@media (max-width: 1590px) {
     main {
         flex-direction: column;
     }

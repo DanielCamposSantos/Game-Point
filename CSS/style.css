@@ -202,7 +202,12 @@ footer hr {
     }
 
     .menu-header>a {
-    display: none;
+        display: none;
+    }
+
+    .direitos {
+    flex-direction: column;
+    gap: 40px;
 }
 
 }
