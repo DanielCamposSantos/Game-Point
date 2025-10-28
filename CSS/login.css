@@ -12,7 +12,6 @@ main {
     display: flex;
     flex-flow: column nowrap;
     gap: 20px;
-    min-width: 318px;
 
 
 
@@ -130,8 +129,6 @@ mark {
 }
 
 #quadra-login {
-
-    min-width: 300px;
     height: 100%;
     width: 100%;
     flex: 1
@@ -142,6 +139,7 @@ mark {
 #quadra-login > img {
     display: block;
     width: 100%;
+    margin: auto;
 
 }
 
@@ -152,15 +150,13 @@ mark {
     main {
         flex-direction: column;
     }
+    
+}
 
-    #quadra-login {
-        height: 100%;
-        width: 100%;
-        flex: 1
-    }
-
-    #quadra-login > img {
-        width: 100%;
+@media (max-width:700px) {
+    .login a {
+        display: block;
+    
     }
 }
 
