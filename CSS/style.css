@@ -35,26 +35,50 @@ main {
     flex: 1 0 auto;
 }
 
+
 header {
     background-color: var(--branco);
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 22px 50px;
+    transition: all 0.3s ease;
 }
 
 .logo {
     width: 136px;
     height: 45px;
+    transition: all 0.3s ease;
 }
+
+.menu-header img {
+    width: 24px;
+    height: 24px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
 
 
 .menu-header {
     display: flex;
     align-items: center;
     gap: 15px;
+
 }
 
-.menu-header a {
+.menu-header>ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+
+
+}
+
+
+
+.menu-header>ul>li>a {
     text-decoration: none;
     color: var(--texto);
     transition: color 0.1s ease 0.1s;
@@ -183,9 +207,15 @@ footer hr {
         min-width: 160px;
     }
 
+
 }
 
 @media (max-width:600px) {
+    .logo {
+        width: 136px;
+        height: 45px;
+    }
+
     .links {
         flex-direction: column;
     }
@@ -208,3 +238,190 @@ footer hr {
 
 }
 
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 25px;
+    }
+
+    .logo {
+        width: 110px;
+        height: 36px;
+    }
+
+    .menu-header img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .menu-header {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo {
+        width: 95px;
+        height: 32px;
+    }
+
+    .menu-header img {
+        width: 18px;
+        height: 18px;
+    }
+
+    .menu-header {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    header {
+        padding: 10px 15px;
+    }
+
+    .logo {
+        width: 85px;
+        height: 28px;
+    }
+
+    .menu-header img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .menu-header {
+        gap: 8px;
+    }
+}
+
+
+@media (max-width: 1360px) {
+    .menu-header>ul {
+        display: none;
+
+
+    }
+}
+/* Overlay para escurecer o fundo */
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 998;
+}
+
+#menu-overlay.overlay-ativo {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menu lateral com animações */
+.menu-oculto {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    height: 100vh;
+    background: #F4F4F4;
+    padding: 50px 30px;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    z-index: 999;
+    transform: translateX(0);
+}
+
+.menu-oculto.menu-aberto {
+    right: 0;
+}
+
+.menu-oculto.menu-fechando {
+    right: -100%;
+    transition: right 0.3s ease;
+}
+
+#menu-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.menu-oculto > ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+
+.menu-oculto > ul > li {
+    list-style: none;
+    width: 100%;
+}
+
+.menu-oculto > ul > li > a {
+    color: var(--Texto-menu, #374151);
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid #C4C4C4;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    transition: all 0.2s ease;
+}
+
+.menu-oculto > ul > li > a:hover {
+    color: var(--vermelho);
+    padding-left: 10px;
+}
+
+#fechar-menu {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#fechar-menu:hover {
+    transform: scale(1.1);
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 480px) {
+    .menu-oculto {
+        width: 100%;
+        padding: 40px 20px;
+    }
+    
+    .menu-oculto > ul > li > a {
+        font-size: 20px;
+        padding: 18px 0;
+    }
+    
+    #menu-box {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 360px) {
+    .menu-oculto {
+        padding: 30px 15px;
+    }
+    
+    .menu-oculto > ul > li > a {
+        font-size: 18px;
+        padding: 16px 0;
+    }
+}

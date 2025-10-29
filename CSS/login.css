@@ -1,6 +1,6 @@
-main {
+main#login-box {
     display: flex;
-    
+
     flex-flow: row wrap;
     align-items: center;
     justify-content: center;
@@ -101,7 +101,7 @@ mark {
     font-weight: 600;
     line-height: 100%;
     border: none;
-    
+
 
 
 }
@@ -136,7 +136,7 @@ mark {
 
 
 
-#quadra-login > img {
+#quadra-login>img {
     display: block;
     width: 100%;
     margin: auto;
@@ -147,19 +147,20 @@ mark {
 
 /* Para telas menores (mobile) */
 @media (max-width: 1590px) {
-    main {
+    main#login-box {
         flex-direction: column;
     }
-    
+
 }
 
 @media (max-width:700px) {
     .login a {
         display: block;
-    
+
     }
 }
 
 .vazio {
     color: red;
 }
+

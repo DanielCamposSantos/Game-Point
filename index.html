@@ -11,15 +11,24 @@
         <header>
             <img src="images/logo.png" alt="logo do gamepoint" class="logo">
             <nav class="menu-header">
-                <a href="cadastro.html">Torne-se um anfitrião</a>
-                <img src="images/menu-button.png" alt="botão de menu">
+                <ul>
+                    <li><a href="#">Seu perfil</a></li>
+                    <li><a href="#">Busque por quadras</a></li>
+                    <li><a href="#">Histórico de partidas</a></li>
+                    <li><a href="#">Inicie uma partida agora</a></li>
+                    <li><a href="#">Avaliações</a></li>
+                    <li><a href="cadastro.html">Torne-se um anfitrião</a></li>
+                </ul>
+
+                <img src="images/menu-button.png" alt="botão de menu" id="menu">
                 <img src="images/search-button.png" alt="botão de pesquisa">
             </nav>
         </header>
-        <main>
+        <main id="login-box">
             <section class="login" id="login">
                 <h1>Faça seu <mark>login</mark></h1>
-                <p>Ainda não possui conta? <a href="cadastro.html">Cadastre-se</a></p>
+                <p>Ainda não possui conta? <a
+                        href="cadastro.html">Cadastre-se</a></p>
 
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email"
@@ -36,7 +45,7 @@
             <picture id="quadra-login">
                 <img src="images/quadra-login.jpg" alt>
             </picture>
-
+            
         </main>
         <footer>
             <section class="links">
@@ -101,4 +110,5 @@
         </footer>
     </body>
     <script src="JS/auth.js"></script>
+    <script src="JS/menu.js"></script>
 </html>
