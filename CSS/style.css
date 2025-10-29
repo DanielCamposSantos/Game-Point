@@ -141,12 +141,8 @@ footer {
 
 footer hr {
     border-color: #373E41;
-    margin: 50px auto;
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
-    display: block;
-    box-sizing: border-box;
+    margin: 50px 0px;
+
 }
 
 .direitos {
@@ -198,7 +194,7 @@ footer hr {
         flex: unset;
         max-width: unset;
         min-width: unset;
-        width: 100%;
+        width: auto;
     }
 
     .menu-header>a {
@@ -206,8 +202,9 @@ footer hr {
     }
 
     .direitos {
-    flex-direction: column;
-    gap: 40px;
-}
+        flex-direction: column;
+        gap: 40px;
+    }
 
 }
+

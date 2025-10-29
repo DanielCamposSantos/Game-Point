@@ -132,21 +132,15 @@ select {
     font-weight: 300;
 }
 
-#esportes-disponiveis-container {
+#esportes-disponiveis-box {
     background-color: #FAFAFA;
-    ;
-    background-image: url(../images/jogador.png);
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: contain;
+    background: url(../images/jogador.png) right / contain no-repeat;
 
 }
 
+
 #esportes-disponiveis {
     padding: 97px 150px;
-    width: 100%;
-    box-sizing: border-box;
-
 
 }
 
@@ -174,16 +168,16 @@ select {
     padding-bottom: 40px;
 }
 
-#imagem-esporte-container {
+#imagem-esporte-box {
     display: flex;
     gap: 40px;
+    width: 250px;
 
 
 }
 
 .tipo-esporte>img {
     width: 250px;
-    height: 250px;
 
 
 }
@@ -206,12 +200,12 @@ select {
     font-weight: 300;
     line-height: 120%;
     /* 18px */
-    height: 250px;
     width: 250px;
 
 }
 
 #link-quadra {
+    margin-top: 250px;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -225,12 +219,12 @@ select {
     /* 18px */
 }
 
-#quadras-proximas-container {
+#quadras-proximas-box {
     padding: 97px 150px;
 }
 
 
-#esporte-proximo-container {
+#esporte-proximo-box {
     display: flex;
 }
 
@@ -263,8 +257,8 @@ select {
 
 .esporte-proximo>ul {
     width: auto;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     list-style: none;
     display: flex;
     gap: 25px;
@@ -294,7 +288,7 @@ select {
 }
 
 
-#suporte-container {
+#suporte-box {
     background: #E6342C;
     padding: 80px 150px;
     display: flex;
@@ -305,7 +299,7 @@ select {
 }
 
 
-#suporte-container>h1 {
+#suporte-box>h1 {
     color: #FFF;
     font-size: 42px;
     font-weight: 400;
@@ -315,7 +309,7 @@ select {
 
 
 
-#suporte-container>p {
+#suporte-box>p {
     color: #FFF;
     font-size: 20px;
     font-weight: 300;
@@ -323,7 +317,7 @@ select {
     /* 24px */
 }
 
-#suporte-container>button {
+#suporte-box>button {
     display: flex;
     padding: 20px 35px;
     justify-content: center;
@@ -339,195 +333,103 @@ select {
     /* 18px */
 }
 
-#suporte-container>button::after {
+#suporte-box>button::after {
 
     content: url(../SVG/seta-branca.svg);
+
 }
 
 
-@media (max-width:1960px) {
-
-    .descricao-bloco>h2 {
-        font-size: 70px;
-    }
-
-    .descricao-bloco>p {
-        font-size: 36px;
-    }
-
-    #esportes-disponiveis-container {
-        display: flex;
-        flex-direction: column;
-        background-image: none;
 
 
-    }
 
-    #imagem-esporte-container {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-    }
 
-    .tipo-esporte {
+@media (max-width: 1970px) {
+    .descricao-bloco {
         display: flex;
         flex-direction: column;
         align-items: center;
-        width: 100%;
     }
 
-    .tipo-esporte>img {
-        width: 50%;
-        height: 100%;
-    }
-
-    .tipo-esporte>h3 {
-        font-size: 60px;
-        text-align: center;
-    }
-
-    .tipo-esporte>p {
-        width: 100%;
-        font-size: 30px;
-        text-align: center;
-    }
-
-    #esporte-proximo-container {
-        gap: 200px;
-    }
-
-
-    .esporte-proximo {
-        display: flex;
+    #imagem-esporte-box {
         flex-direction: column;
-        align-items: center;
+        justify-self: center;
+
+    }
+
+    #esportes-disponiveis-box {
+        background: none;
+
+    }
+
+    #jogador-gamepoint-mobile {
         width: 100%;
-    }
-
-    .esporte-proximo>img {
-        width: 50%;
-        height: 100%;
-    }
-
-    .esporte-proximo>h3 {
-        font-size: 60px;
-        text-align: center;
-    }
-
-    .esporte-proximo>ul>li {
-        font-size: 30px;
-        text-align: center;
-    }
-
-    #jogador-mobile {
-        background-image: url(../images/jogador-mobile.png);
-        background-repeat: no-repeat;
-        background-position: center bottom;
-        background-size: cover;
-        padding: 50%;
+        aspect-ratio: 1760 / 1500;
+        /* ≈ 1.17:1 - proporção exata da sua imagem */
+        background: url(../images/jogador-mobile.png) center center / contain no-repeat;
+        max-height: 80vh;
+        /* Limite máximo para não ficar muito grande */
     }
 
     #link-quadra {
-        display: flex;
-        align-items: center;
         justify-content: center;
-        gap: 30px;
     }
 
-    #link-quadra>a {
-        font-size: 30px;
+    #esporte-proximo-box {
+        flex-direction: column;
+        gap: 43px;
+
     }
-
-
-
-    #esporte-proximo-container {
-        flex-flow: column
-    }
-
 
 
 }
 
 
-
-@media (max-width:1700px) {
-#suporte-container {
-        flex-direction: column;
-    }
+@media (max-width: 1430px) {
     #bloco-de-filtros {
         display: flex;
-        gap: 20px;
-        flex-flow: column wrap;
         justify-content: center;
         align-items: center;
-    }
-
-    #buscar {
-        order: 2;
-    }
-
-    .tipo-esporte>img {
-        width: 70%;
+        flex-direction: column;
 
 
     }
 
-    .descricao-bloco>h2 {
-        font-size: 50px;
+    #suporte-box {
+        flex-direction: column;
 
     }
 
 
-    .descricao-bloco>p {
-        font-size: 25px;
+}
 
+@media (max-width: 380px) {
+
+
+    select {
+        width: 270px;
     }
 
-    .tipo-esporte>h3 {
-        padding-top: 50px;
-        font-size: 40px;
-
-    }
-
-
-
-    .tipo-esporte>p {
-        font-size: 25px;
-
-    }
-
-    .esporte-proximo>img {
-        width: 70%;
-    }
-
-    .esporte-proximo>h3 {
-        padding-top: 50px;
-        font-size: 40px;
-    }
-
-    .esporte-proximo>ul>li {
-        font-size: 25px;
-    }
-
-    #esporte-proximo-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    #addAuto {
+    margin-left: 1%5px;
+    gap: 5px;
+}
 
 }
 
 
-@media (max-width:900px) {
-    
+@media (max-width: 820px) {
+    .descricao-bloco {
+        text-align: center;
+    }
 
-    .tipo-esporte>img {
-        width: 100%;
-
+    .avaliacao::before {
+        margin: auto;
 
     }
 
-    .esporte-proximo>img {
-        width: 100%;
+    .pessoas::before {
+        margin: auto;
     }
 
 }
