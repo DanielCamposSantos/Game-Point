@@ -183,7 +183,7 @@ hr {
 
 @media (max-width:1700px) {
     #quadras-historico {
-        flex-flow: row wrap;
+        flex-flow: column
 
     }
 
@@ -191,4 +191,18 @@ hr {
     flex-flow: column;
 
 }
+}
+
+@media (max-width: 820px) {
+    
+
+    .avaliacao::before {
+        margin: auto;
+
+    }
+
+    .pessoas::before {
+        margin: auto;
+    }
+
 }
