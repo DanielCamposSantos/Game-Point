@@ -398,10 +398,9 @@ footer hr {
     transform: scale(1.1);
 }
 
-/* Responsividade para telas menores */
 @media (max-width: 480px) {
     .menu-oculto {
-        width: 100%;
+        width: 70%;
         padding: 40px 20px;
     }
     
@@ -417,6 +416,7 @@ footer hr {
 
 @media (max-width: 360px) {
     .menu-oculto {
+        width: 50%;
         padding: 30px 15px;
     }
     

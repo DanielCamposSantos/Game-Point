@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="CSS/pagina-principal.css">
     </head>
     <body>
-         <header>
+        <header>
             <img src="images/logo.png" alt="logo do gamepoint" class="logo">
             <nav class="menu-header">
                 <ul>
@@ -133,7 +133,7 @@
                 <section id="esporte-proximo-box">
                     <div class="esporte-proximo">
                         <img src="images/Quadra-brotas.png"
-                            alt="foto da Quadra de Brotas" onclick="irQuadra()">
+                            alt="foto da Quadra de Brotas" id="irQuadra">
                         <h3>Quadra Brotas</h3>
                         <ul>
                             <li class="preco">R$ 13 por pessoa</li>
@@ -254,6 +254,13 @@
             </aside>
         </footer>
     </body>
-    <script src="JS/fluxo-site.js"></script>
+    <script> 
+    addEventListener('click', (e)=>{
+        if(e.target.id =='irQuadra')
+        window.location.href = 'quadra-futebol.html';
+    })
+        
+    
+    </script>
     <script src="JS/menu.js"></script>
 </html>
