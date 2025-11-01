@@ -81,6 +81,7 @@ hr {
     font-weight: 500;
     line-height: 100%;
     border: none;
+    cursor: pointer;
 }
 
 #iniciar {
@@ -164,24 +165,57 @@ hr {
 
 
 .avaliacao::before {
-    content: url(../images/Star\ 1.png);
+    content: url(../SVG/estrela-cinza.svg);
     margin-right: 8px;
 
 }
 
 .pessoas::before {
-    content: url(../images/Pessoa.png);
+    content: url(../SVG/Pessoa-cinza.svg);
     margin-right: 8px;
+}
+
+.mais-info {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.mais-info>img {
+    width: 14px;
+    height: 14px;
+    aspect-ratio: 1/1;
+
+}
+
+.mais-info>a {
+    color: #374151;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 100%;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: auto;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font
 }
 
 
 
 
-
-
-
-
 @media (max-width:1700px) {
+    main#central-jogador > h1{
+        text-align: center;
+    }
+
+#historico > h2{
+    text-align: center;
+}
+
     #quadras-historico {
         flex-flow: column
 

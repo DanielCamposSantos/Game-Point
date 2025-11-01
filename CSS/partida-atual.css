@@ -1,5 +1,6 @@
 main {
     padding: 78px 146px;
+    box-sizing: border-box;
 }
 
 main>h1 {
@@ -9,7 +10,6 @@ main>h1 {
     line-height: 100%;
     padding-bottom: 63px;
 }
-
 
 #partida-container {
     display: flex;
@@ -24,7 +24,6 @@ main>h1 {
     align-items: center;
     gap: 31px;
 }
-
 
 meter {
     width: 603px;
@@ -67,36 +66,66 @@ meter::-webkit-meter-optimum-value {
 #botoes {
     display: flex;
     gap: 20px;
-
 }
-
 
 button {
     padding: 20px 45px;
     border-radius: 150px;
     border: none;
     color: #FFF;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 #encerrar {
     background: #E6342C;
 }
 
+#encerrar:hover {
+    background: #D42A22;
+    transform: translateY(-2px);
+}
+
+#encerrar:active {
+    background: #B3201A;
+    transform: translateY(0);
+}
+
 #iniciar {
     background: #E6342C;
 }
 
+#iniciar:hover {
+    background: #D42A22;
+    transform: translateY(-2px);
+}
+
+#iniciar:active {
+    background: #B3201A;
+    transform: translateY(0);
+}
 
 #pausar {
     background: #374151;
 }
 
-.encerrar {
+#pausar:hover {
+    background: #2D3748;
+    transform: translateY(-2px);
+}
+
+#pausar:active {
+    background: #1F2937;
+    transform: translateY(0);
+}
+
+.mensagem {
     color: #E6342C;
     align-self: center;
     font-size: 35px;
 }
-
 
 #placar-container {
     display: flex;
@@ -123,10 +152,7 @@ button {
     justify-content: center;
     gap: 30px;
     align-items: center;
-
 }
-
-
 
 #placar>h3 {
     color: #FFF;
@@ -146,9 +172,6 @@ button {
     font-size: 32px;
     font-weight: 400;
     line-height: 100%;
-    /* 32px */
-
-
 }
 
 #placarA {
@@ -168,7 +191,6 @@ hr {
     height: 2px;
     border: none;
     background-color: #5C687C;
-
 }
 
 #alterar-placar {
@@ -200,6 +222,19 @@ hr {
     font-size: 32px;
     font-weight: 400;
     line-height: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.alterar-placar-btt:hover {
+    background: #5C687C;
+    transform: translateY(-2px);
+}
+
+.alterar-placar-btt:active {
+    background: #3A4558;
+    transform: translateY(0);
 }
 
 #localizacao-container {
@@ -212,6 +247,7 @@ hr {
     gap: 40px;
     border-radius: 25px;
     background: #F0F0F0;
+    box-sizing: border-box;
 }
 
 #localizacao-container>h1 {
@@ -221,19 +257,13 @@ hr {
     line-height: 100%;
 }
 
-
-
-
-
 #dados-local {
     display: grid;
     grid-template-columns: repeat(4, auto);
     grid-template-rows: repeat(2, auto);
     row-gap: 15px;
     width: 100%;
-
 }
-
 
 #dados-local>h2 {
     grid-row: 1;
@@ -241,7 +271,6 @@ hr {
     font-size: 26px;
     font-weight: 400;
     line-height: 100%;
-    /* 26px */
 }
 
 #dados-local>p {
@@ -250,36 +279,333 @@ hr {
     font-size: 20px;
     font-weight: 300;
     line-height: 100%;
-    /* 20px */
 }
 
-
-@media (max-width:1750px) {
+/* RESPONSIVIDADE */
+@media (max-width: 1750px) {
     main {
+        
         display: flex;
         flex-flow: column;
         justify-content: center;
         align-items: center;
+        padding: 60px 100px;
     }
-
-
 
     #partida-container {
         flex-flow: column;
+        gap: 80px;
     }
 
     #dados-local {
         display: flex;
         flex-direction: column;
         width: 100%;
-
     }
 
     #dados-local > p {
         padding-bottom: 40px;
+    }
+}
 
+@media (max-width: 1440px) {
+    main {
+        padding: 50px 80px;
+    }
+
+    #partida-container {
+        gap: 60px;
+    }
+
+    meter {
+        width: 500px;
+    }
+
+    #temporizador {
+        font-size: 180px;
+    }
+
+
+    hr {
+        width: 500px;
+    }
+}
+
+@media (max-width: 1200px) {
+    main {
+        padding: 40px 60px;
+    }
+
+    #temporizador {
+        font-size: 150px;
+    }
+
+    meter {
+        width: 450px;
+    }
+
+
+    .alterar-placar-btt {
+        padding: 18px 35px;
+        font-size: 28px;
+    }
+
+    hr {
+        width: 450px;
+    }
+}
+
+@media (max-width: 1024px) {
+    main {
+        padding: 30px 40px;
+    }
+
+    main>h1 {
+        font-size: 28px;
+        padding-bottom: 40px;
+    }
+
+    #temporizador {
+        font-size: 120px;
+    }
+
+    #tempo-container>p {
+        font-size: 28px;
+    }
+
+    meter {
+        width: 400px;
+    }
+
+    #botoes {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        padding: 18px 35px;
+        font-size: 15px;
+    }
+
+    #placar-container {
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        padding: 30px 20px;
+    }
+
+    #placar-container>h2 {
+        font-size: 28px;
+    }
+
+    #placar>h3 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .pontuacao {
+        width: 120px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    hr {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    #alterar-placar {
+        gap: 20px;
+    }
+
+    .alterar-placar-btt {
+        padding: 15px 25px;
+        font-size: 24px;
+    }
+
+    #localizacao-container {
+        padding: 40px 50px;
+        margin-top: 50px;
+    }
+
+    #localizacao-container>h1 {
+        font-size: 28px;
+    }
+
+    #dados-local>h2 {
+        font-size: 24px;
+    }
+
+    #dados-local>p {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 20px 30px;
+        
+    }
+
+    main>h1 {
+        font-size: 24px;
+        padding-bottom: 30px;
+        text-align: center;
+    }
+
+    #temporizador {
+        font-size: 100px;
+        gap: 10px;
+    }
+
+    #tempo-container>p {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    meter {
+        width: 300px;
+    }
+
+    #botoes {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+        max-width: 250px;
+        padding: 16px 30px;
+    }
+
+    #placar-container {
+        width: 400px;
+    }
+
+    #placar-container>h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    #placar>h3 {
+        font-size: 20px;
+    }
+
+    .pontuacao {
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
     }
 
 
 
+    hr {
+        margin: 20px 0;
+        max-width: 300px;
+    }
+
+
+    #alterar-placar>h3 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .alterar-placar-btt {
+        width: 100%;
+        font-size: 20px;
+    }
+
+    #localizacao-container {
+        padding: 30px;
+        margin-top: 40px;
+        gap: 30px;
+    }
+
+    #localizacao-container>h1 {
+        font-size: 24px;
+        text-align: center;
+        width: 100%;
+    }
+
+    #dados-local>h2 {
+        font-size: 20px;
+    }
+
+    #dados-local>p {
+        font-size: 16px;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    main {
+        
+        padding: 15px 20px;
+    }
+
+    main>h1 {
+        font-size: 20px;
+        padding-bottom: 20px;
+    }
+
+    #temporizador {
+        font-size: 80px;
+    }
+
+    #tempo-container>p {
+        font-size: 18px;
+    }
+
+    meter {
+        width: 250px;
+    }
+
+    button {
+        padding: 14px 25px;
+        font-size: 14px;
+    }
+
+   #placar-container {
+        width: 280px;
+    }
+
+    #placar-container>h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #placar>h3 {
+        font-size: 18px;
+    }
+
+    .pontuacao {
+        height: 50px;
+        width: 50px;
+        font-size: 20px;
+    }
+
+    .alterar-placar-btt {
+        padding: 10px 15px;
+        font-size: 18px;
+    }
+
+    #localizacao-container {
+        padding: 20px;
+        margin-top: 30px;
+        gap: 20px;
+    }
+
+    #localizacao-container>h1 {
+        font-size: 20px;
+    }
+
+    #dados-local>h2 {
+        font-size: 18px;
+    }
+
+    #dados-local>p {
+        font-size: 14px;
+        padding-bottom: 15px;
+    }
 }

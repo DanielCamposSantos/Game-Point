@@ -57,39 +57,25 @@ main {
 #quadra-fotos {
     margin-top: 30px;
     margin-bottom: 40px;
-    display: flex;
-    gap: 20px;
-    width: 100%;
-}
-
-#destaque {
-    flex: 1;
-    min-width: 0;
-}
-
-#destaque img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-#outras-imagens {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 15px;
-    width: 300px;
-    flex-shrink: 0;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: flex-start;
+    gap: 25px
 }
 
-#outras-imagens>img {
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    object-fit: cover;
-    cursor: pointer;
+#quadra-fotos>img:nth-child(1) {
+    grid-row: 1 / span 2;
+    object-fit: contain;
+    justify-self: stretch;
 }
+#quadra-fotos>img{
+    width: 100%;
+}
+
+
+
+
 
 #titulo-descricao-box {
     display: grid;
@@ -486,6 +472,7 @@ main {
     border-radius: 25px;
     border: 1px solid #E3E3E3;
     background: #F5F5F5;
+    cursor: pointer;
 }
 
 #anfitriao-box>h1 {
@@ -545,29 +532,27 @@ main {
 
 
 
+@media (max-width: 1500px) {
+    
+    #quadra-fotos {
+        justify-content: center;
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(2, auto);
+    }
+
+
+    #quadra-fotos>img:nth-child(1) {
+        grid-row: auto;
+        grid-column: 1 / span 4;
+    }
+
+    #quadra-fotos>img {
+        grid-row: 2;
+    }
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 @media (max-width: 1200px) {
     #grid-avaliacoes {
@@ -575,9 +560,24 @@ main {
         gap: 20px;
     }
 
-    #outras-imagens {
-        width: 250px;
+
+    #quadra-fotos {
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(2, auto);
     }
+
+
+    #quadra-fotos>img:nth-child(1) {
+        grid-row: auto;
+        grid-column: 1 / span 4;
+    }
+
+    #quadra-fotos>img {
+        grid-row: 2;
+    }
+
+
+
 }
 
 @media (max-width: 1024px) {
@@ -589,15 +589,6 @@ main {
         font-size: 36px;
     }
 
-    #quadra-fotos {
-        flex-direction: column;
-    }
-
-    #outras-imagens {
-        width: 100%;
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: 1fr;
-    }
 
     #grid-calendario-descricao {
         grid-template-columns: 1fr;
@@ -612,7 +603,7 @@ main {
     }
 
     #local-imagem {
-        background: url(../images/local-quadra-brotas.png) no-repeat center / cover;
+        background: url(../images/Backgorund/local-quadra-brotas.png) no-repeat center / cover;
         position: relative;
         width: 100%;
         height: 365px;
@@ -709,11 +700,6 @@ main {
         gap: 15px;
     }
 
-    #outras-imagens {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        gap: 10px;
-    }
 
     #calendario-box {
         padding: 20px;
@@ -768,6 +754,15 @@ main {
     #seletor-mes-box>p {
         font-size: 16px;
     }
+
+    #info-avaliacao {
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+
+
+
 }
 
 @media (max-width: 1385px) {
