@@ -10,11 +10,11 @@ function abrirMenu() {
     item.id = 'menu-lateral';
     item.innerHTML = `
         <div id="menu-box">
-            <img src="images/logo.png" alt="logo gamepoint" class="logo">
+            <img src="images/logo/logo.png" alt="logo gamepoint" class="logo">
             <img src="SVG/Sair.svg" alt="fechar menu" id="fechar-menu">
         </div>
         <ul>
-            <li><a href="#">Seu perfil</a></li>
+            <li><a href="meu-perfil.html">Seu perfil</a></li>
             <li><a href="#">Busque por quadras</a></li>
             <li><a href="#">Histórico de partidas</a></li>
             <li><a href="#">Inicie uma partida agora</a></li>

@@ -9,19 +9,22 @@
     </head>
     <body>
         <header>
-            <img src="images/logo.png" alt="logo do gamepoint" class="logo">
+            <img src="images/Logo/logo.png" alt="logo do gamepoint"
+                class="logo">
             <nav class="menu-header">
                 <ul>
                     <li><a href="#">Seu perfil</a></li>
                     <li><a href="#">Busque por quadras</a></li>
                     <li><a href="#">Histórico de partidas</a></li>
-                    <li><a href="#">Inicie uma partida agora</a></li>
+                    <li><a href="partida-atual.html">Inicie uma partida agora</a></li>
                     <li><a href="#">Avaliações</a></li>
                     <li><a href="cadastro.html">Torne-se um anfitrião</a></li>
                 </ul>
 
-                <img src="images/menu-button.png" alt="botão de menu" id="menu">
-                <img src="images/search-button.png" alt="botão de pesquisa">
+                <img src="images/icone/menu-button.png" alt="botão de menu"
+                    id="menu">
+                <img src="images/icone/search-button.png"
+                    alt="botão de pesquisa">
             </nav>
         </header>
         <main>
@@ -40,9 +43,10 @@
                         <button id="iniciar" onclick="iniciar()">Iniciar
                             partida</button>
 
-                        <button id="encerrar" onclick="window.location.href='avaliacao.html'">Encerrar
+                        <button id="encerrar"
+                            onclick="window.location.href='avaliacao.html'">Encerrar
                             jogo</button>
-                        <button id="pausar" onclick="pausar()">Pausa</button>
+                        <button id="pausar" onclick="pausar()">Pausar</button>
                     </div>
                 </section>
                 <section id="placar-container">
@@ -79,13 +83,14 @@
                 <h1>Dados da locação</h1>
                 <div id="dados-local">
                     <h2>Localização</h2>
-                    <p>R. Prof. Alda Leal, 26 - Brotas, Salvador - BA, 40286-340</p>
+                    <p>R. Prof. Alda Leal, 26 - Brotas, Salvador - BA,
+                        40286-340</p>
                     <h2>Horário</h2>
-                     <p>14h até 17h (3 horas de locação)</p>
+                    <p>14h até 17h (3 horas de locação)</p>
                     <h2>Valor</h2>
-                     <p>R$15,00 por jogador</p>
+                    <p>R$15,00 por jogador</p>
                     <h2>Jogadores</h2>
-                     <p>8</p>
+                    <p>8</p>
                 </div>
             </section>
         </main>
@@ -145,13 +150,13 @@
             </section>
             <hr>
             <aside class="direitos">
-                <img src="images/logo-branca.png" alt="logo gamepoint">
+                <img src="images/logo/logo-branca.png" alt="logo gamepoint">
                 <p>2025 © Todos os direitos reservados</p>
             </aside>
 
         </footer>
     </body>
-    <script src="JS/partida-timer.js"></script>
-    <script src="JS/placar.js"></script>
-    <script src="JS/menu.js"></script>
+    <script src="JS/partida.js"></script>
+    
+    <script src="JS/menu.js"></script> 
 </html>
