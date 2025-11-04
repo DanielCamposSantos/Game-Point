@@ -140,6 +140,8 @@ select {
 
 
 #esportes-disponiveis {
+    display: flex;
+    flex-direction: column;
     padding: 97px 150px;
 
 }
@@ -152,7 +154,6 @@ select {
     font-style: normal;
     font-weight: 500;
     line-height: 100%;
-    /* 30px */
     padding-bottom: 15px;
 
 }
@@ -199,7 +200,6 @@ select {
     font-size: 15px;
     font-weight: 300;
     line-height: 120%;
-    /* 18px */
     width: 250px;
 
 }
@@ -216,7 +216,6 @@ select {
     font-size: 18px;
     font-weight: 500;
     line-height: 100%;
-    /* 18px */
 }
 
 #quadras-proximas-box {
@@ -361,7 +360,6 @@ select {
     font-size: 18px;
     font-weight: 300;
     line-height: 100%;
-    /* 18px */
 }
 
 #suporte-box>button::after {
@@ -372,10 +370,11 @@ select {
 
 
 
-
-
-
-@media (max-width: 1970px) {
+@media (max-width: 1910px) {
+    #esportes-disponiveis {
+        align-items: center;
+    
+    }
     .descricao-bloco {
         display: flex;
         flex-direction: column;
@@ -396,10 +395,8 @@ select {
     #jogador-gamepoint-mobile {
         width: 100%;
         aspect-ratio: 1760 / 1500;
-        /* ≈ 1.17:1 - proporção exata da sua imagem */
         background: url(../images/Backgorund/jogador-mobile.png) center center / contain no-repeat;
         max-height: 80vh;
-        /* Limite máximo para não ficar muito grande */
     }
 
     #link-quadra {
