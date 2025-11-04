@@ -31,3 +31,7 @@ O repositório segue uma organização simples em **dois branches principais**:
 ## 👥 Equipe  
 
 O desenvolvimento foi realizado em equipe, com divisão de papéis como **Scrum Master**, **Product Owner** e **Desenvolvedores**, seguindo práticas de colaboração e controle de versões no GitHub.  
+
+## 🔗 Links
+
+ https://danielcampossantos.github.io/Game-Point/
