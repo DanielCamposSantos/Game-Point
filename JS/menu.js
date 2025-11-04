@@ -10,7 +10,8 @@ function abrirMenu() {
     item.id = 'menu-lateral';
     item.innerHTML = `
         <div id="menu-box">
-            <img src="images/Logo/logo.png" alt="logo gamepoint" class="logo">
+            <img src="images/Logo/logo.png" alt="logo do gamepoint"
+                class="logo">
             <img src="SVG/Sair.svg" alt="fechar menu" id="fechar-menu">
         </div>
         <ul>
