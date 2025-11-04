@@ -22,7 +22,7 @@ function abrirMenu() {
             <li><a href="#">Avaliações</a></li>
             <li><a href="cadastro.html">Torne-se um anfitrião</a></li>
         </ul>
-    `;
+    `
     
     bloco.appendChild(item);
     
