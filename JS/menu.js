@@ -18,7 +18,7 @@ function abrirMenu() {
             <li><a href="meu-perfil.html">Seu perfil</a></li>
             <li><a href="#">Busque por quadras</a></li>
             <li><a href="#">Histórico de partidas</a></li>
-            <li><a href="#">Inicie uma partida agora</a></li>
+            <li><a href="cadastro.html">Inicie uma partida agora</a></li>
             <li><a href="#">Avaliações</a></li>
             <li><a href="cadastro.html">Torne-se um anfitrião</a></li>
         </ul>
