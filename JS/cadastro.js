@@ -1,224 +1,250 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Sistema de tabs
-    const btnJogador = document.getElementById('btn-jogador');
-    const btnAnfitriao = document.getElementById('btn-anfitriao');
-    const formJogador = document.getElementById('form-jogador');
-    const formAnfitriao = document.getElementById('form-anfitriao');
+    const jogadorBtn = document.getElementById('btn-jogador');
+    const anfitriaoBtn = document.getElementById('btn-anfitriao');
+    const jogadorForm = document.getElementById('form-jogador');
+    const anfitriaoForm = document.getElementById('form-anfitriao');
 
-    function switchForm(activeButton, activeForm) {
-        [btnJogador, btnAnfitriao].forEach(btn => btn.classList.remove('active'));
-        [formJogador, formAnfitriao].forEach(form => form.classList.remove('active'));
+    function mostrarForm(btnAtivo, formAtivo) {
+        jogadorBtn.classList.remove('active');
+        anfitriaoBtn.classList.remove('active');
+        jogadorForm.classList.remove('active');
+        anfitriaoForm.classList.remove('active');
 
-        activeButton.classList.add('active');
-        activeForm.classList.add('active');
+        btnAtivo.classList.add('active');
+        formAtivo.classList.add('active');
     }
 
-    btnJogador.addEventListener('click', () => switchForm(btnJogador, formJogador));
-    btnAnfitriao.addEventListener('click', () => switchForm(btnAnfitriao, formAnfitriao));
+    jogadorBtn.addEventListener('click', () => mostrarForm(jogadorBtn, jogadorForm));
+    anfitriaoBtn.addEventListener('click', () => mostrarForm(anfitriaoBtn, anfitriaoForm));
 
-    switchForm(btnJogador, formJogador);
+    mostrarForm(jogadorBtn, jogadorForm);
 
-    setupFormValidation('jogador');
-    setupFormValidation('anfitriao');
+    function validarFormulario(tipo) {
+        const form = document.getElementById(`form-${tipo}`);
+        const nome = document.getElementById(`nome-${tipo}`);
+        const email = document.getElementById(`email-${tipo}`);
+        const telefone = document.getElementById(`telefone-${tipo}`);
+        const senha = document.getElementById(`senha-${tipo}`);
+        
+        let documento;
+        if (tipo === 'jogador') {
+            documento = document.getElementById('cpf-jogador');
+        } else {
+            documento = document.getElementById('documento-anfitriao');
+        }
 
-    function setupFormValidation(formType) {
-        const form = document.getElementById(`form-${formType}`);
-        const nome = document.getElementById(`nome-${formType}`);
-        const email = document.getElementById(`email-${formType}`);
-        const telefone = document.getElementById(`telefone-${formType}`);
-        const documento = document.getElementById(`${formType === 'jogador' ? 'cpf' : 'documento'}-${formType}`);
-        const senha = document.getElementById(`senha-${formType}`);
+        if (telefone) mascaraTelefone(telefone);
+        if (documento && tipo === 'jogador') mascaraCPF(documento);
+        if (documento && tipo === 'anfitriao') mascaraDocumento(documento);
 
-        if (telefone) addSimpleMask(telefone, "phone");
-        if (documento && formType === 'jogador') addSimpleMask(documento, "cpf");
-        if (documento && formType === 'anfitriao') addSimpleMask(documento, "cnpj-cpf");
-
-        if (nome) nome.addEventListener("input", () => validarCampo(nome, validarNomeCompleto));
-        if (email) email.addEventListener("input", () => validarCampo(email, validarEmail));
-        if (telefone) telefone.addEventListener("input", () => validarCampo(telefone, validarTelefone));
+        if (nome) nome.addEventListener("input", () => validarNome(nome));
+        if (email) email.addEventListener("input", () => validarEmail(email));
+        if (telefone) telefone.addEventListener("input", () => validarTelefone(telefone));
         if (documento) documento.addEventListener("input", () => {
-            if (formType === 'jogador') {
-                validarCampo(documento, validarCPF);
+            if (tipo === 'jogador') {
+                validarCPF(documento);
             } else {
-                validarCampo(documento, validarDocumentoAnfitriao);
+                validarDocumento(documento);
             }
         });
-        if (senha) senha.addEventListener("input", () => {
-            validarSenha(senha, formType);
-            validarCampo(senha, validarSenhaForca);
-        });
+        if (senha) senha.addEventListener("input", () => validarSenha(senha));
 
         form.addEventListener("submit", (e) => {
             e.preventDefault();
             
-            const campos = [nome, email, telefone, documento, senha];
-            let isValid = true;
-
-            campos.forEach(campo => {
-                if (campo) {
-                    let resultado;
-                    switch(campo.id) {
-                        case `nome-${formType}`:
-                            resultado = validarNomeCompleto(campo.value);
-                            break;
-                        case `email-${formType}`:
-                            resultado = validarEmail(campo.value);
-                            break;
-                        case `telefone-${formType}`:
-                            resultado = validarTelefone(campo.value);
-                            break;
-                        case `cpf-${formType}`:
-                        case `documento-${formType}`:
-                            resultado = formType === 'jogador' ? validarCPF(campo.value) : validarDocumentoAnfitriao(campo.value);
-                            break;
-                        case `senha-${formType}`:
-                            resultado = validarSenhaForca(campo.value);
-                            break;
-                    }
-                    
-                    if (resultado && !resultado.ok) {
-                        isValid = false;
-                        mostrarErro(campo, resultado.msg);
-                    } else {
-                        limparErro(campo);
-                    }
+            const camposValidos = [];
+            
+            if (nome) camposValidos.push(validarNome(nome));
+            if (email) camposValidos.push(validarEmail(email));
+            if (telefone) camposValidos.push(validarTelefone(telefone));
+            if (documento) {
+                if (tipo === 'jogador') {
+                    camposValidos.push(validarCPF(documento));
+                } else {
+                    camposValidos.push(validarDocumento(documento));
                 }
-            });
+            }
+            if (senha) camposValidos.push(validarSenha(senha));
 
-            if (isValid) {
-                alert(`Cadastro de ${formType} enviado com sucesso!`);
+            const todosValidos = camposValidos.every(campo => campo === true);
+
+            if (todosValidos) {
+                alert(`Cadastro de ${tipo} enviado com sucesso!`);
                 form.reset();
             }
         });
     }
 
-    function validarCampo(campo, validacaoFn) {
-        const resultado = validacaoFn(campo.value);
-        if (resultado.ok) {
-            limparErro(campo);
-        } else {
-            mostrarErro(campo, resultado.msg);
-        }
-        return resultado.ok;
-    }
-
-    function validarNomeCompleto(value) {
-        if (!value) return { ok: false, msg: "Nome é obrigatório." };
-        const partes = value.trim().split(/\s+/).filter(Boolean);
-        if (partes.length < 2) return { ok: false, msg: "Informe nome e sobrenome." };
-        return { ok: true, msg: "" };
-    }
-
-    function validarEmail(value) {
-        if (!value) return { ok: false, msg: "E-mail é obrigatório." };
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
-        return re.test(value) ? { ok: true, msg: "" } : { ok: false, msg: "Formato de e-mail inválido." };
-    }
-
-    function validarTelefone(value) {
-        if (!value) return { ok: false, msg: "Telefone é obrigatório." };
-        const digits = value.replace(/\D/g, "");
-        return digits.length >= 10 && digits.length <= 11 ? { ok: true, msg: "" } : { ok: false, msg: "Telefone inválido." };
-    }
-
-    function validarCPF(value) {
-        const digits = value.replace(/\D/g, "");
-        return digits.length === 11 ? { ok: true, msg: "" } : { ok: false, msg: "CPF deve ter 11 dígitos." };
-    }
-
-    function validarDocumentoAnfitriao(value) {
-        const digits = value.replace(/\D/g, "");
-        return digits.length === 11 || digits.length === 14 ? { ok: true, msg: "" } : { ok: false, msg: "CPF deve ter 11 dígitos ou CNPJ 14 dígitos." };
-    }
-
-    function validarSenhaForca(value) {
-        if (!value) return { ok: false, msg: "Senha é obrigatória." };
-        return value.length >= 6 ? { ok: true, msg: "" } : { ok: false, msg: "Senha deve ter pelo menos 6 caracteres." };
-    }
-
-    function validarSenha(senha, formType) {
-        const meter = document.getElementById(`senha-meter-${formType}`);
-        const feedback = document.getElementById(`senha-feedback-${formType}`);
+    function validarNome(campo) {
+        const valor = campo.value.trim();
+        const temNomeSobrenome = valor.split(' ').length >= 2;
         
-        let forca = 0;
-        if (senha.value.length >= 8) forca++;
-        if (/[A-Z]/.test(senha.value) && /[a-z]/.test(senha.value)) forca++;
-        if (/\d/.test(senha.value)) forca++;
-        if (/[^A-Za-z0-9]/.test(senha.value)) forca++;
-        
-        if (meter) meter.value = forca;
-        if (feedback) {
-            let texto = "";
-            let cor = "#d32f2f";
-            
-            if (forca === 0) texto = "";
-            else if (forca === 1) texto = "Senha fraca";
-            else if (forca === 2) texto = "Senha média";
-            else if (forca === 3) texto = "Senha boa";
-            else texto = "Senha forte";
-            
-            if (forca >= 3) cor = "#2e7d32";
-            else if (forca === 2) cor = "#fbc02d";
-            
-            feedback.textContent = texto;
-            feedback.style.color = cor;
+        if (!valor) {
+            mostrarErro(campo, "Nome é obrigatório");
+            return false;
         }
+        
+        if (!temNomeSobrenome) {
+            mostrarErro(campo, "Digite nome e sobrenome");
+            return false;
+        }
+        
+        limparErro(campo);
+        return true;
+    }
+
+    function validarEmail(campo) {
+        const valor = campo.value;
+        const formatoEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        if (!valor) {
+            mostrarErro(campo, "E-mail é obrigatório");
+            return false;
+        }
+        
+        if (!formatoEmail.test(valor)) {
+            mostrarErro(campo, "E-mail inválido");
+            return false;
+        }
+        
+        limparErro(campo);
+        return true;
+    }
+
+    function validarTelefone(campo) {
+        const digitos = campo.value.replace(/\D/g, "");
+        
+        if (!campo.value) {
+            mostrarErro(campo, "Telefone é obrigatório");
+            return false;
+        }
+        
+        if (digitos.length < 10 || digitos.length > 11) {
+            mostrarErro(campo, "Telefone inválido");
+            return false;
+        }
+        
+        limparErro(campo);
+        return true;
+    }
+
+    function validarCPF(campo) {
+        const digitos = campo.value.replace(/\D/g, "");
+        
+        if (!campo.value) {
+            mostrarErro(campo, "CPF é obrigatório");
+            return false;
+        }
+        
+        if (digitos.length !== 11) {
+            mostrarErro(campo, "CPF deve ter 11 dígitos");
+            return false;
+        }
+        
+        limparErro(campo);
+        return true;
+    }
+
+    function validarDocumento(campo) {
+        const digitos = campo.value.replace(/\D/g, "");
+        
+        if (!campo.value) {
+            mostrarErro(campo, "Documento é obrigatório");
+            return false;
+        }
+        
+        if (digitos.length !== 11 && digitos.length !== 14) {
+            mostrarErro(campo, "CPF deve ter 11 dígitos ou CNPJ 14 dígitos");
+            return false;
+        }
+        
+        limparErro(campo);
+        return true;
+    }
+
+    function validarSenha(campo) {
+        if (!campo.value) {
+            mostrarErro(campo, "Senha é obrigatória");
+            return false;
+        }
+        
+        if (campo.value.length < 6) {
+            mostrarErro(campo, "Senha deve ter pelo menos 6 caracteres");
+            return false;
+        }
+        
+        limparErro(campo);
+        return true;
     }
 
     function mostrarErro(campo, mensagem) {
-        let feedback = campo.nextElementSibling;
-        if (!feedback || !feedback.classList.contains('validation-feedback')) {
-            feedback = document.createElement('div');
-            feedback.className = 'validation-feedback';
-            campo.parentNode.insertBefore(feedback, campo.nextSibling);
+        let erroDiv = campo.nextElementSibling;
+        if (!erroDiv || !erroDiv.classList.contains('erro')) {
+            erroDiv = document.createElement('div');
+            erroDiv.className = 'erro';
+            campo.parentNode.insertBefore(erroDiv, campo.nextSibling);
         }
-        feedback.textContent = mensagem;
-        campo.style.borderColor = '#d32f2f';
+        erroDiv.textContent = mensagem;
+        campo.style.borderColor = 'red';
     }
 
     function limparErro(campo) {
-        const feedback = campo.nextElementSibling;
-        if (feedback && feedback.classList.contains('validation-feedback')) {
-            feedback.textContent = '';
+        const erroDiv = campo.nextElementSibling;
+        if (erroDiv && erroDiv.classList.contains('erro')) {
+            erroDiv.textContent = '';
         }
         campo.style.borderColor = '#ccc';
     }
 
-    function addSimpleMask(el, pattern) {
-        el.addEventListener("input", () => {
-            const digits = el.value.replace(/\D/g, "");
+    function mascaraTelefone(campo) {
+        campo.addEventListener("input", () => {
+            const digitos = campo.value.replace(/\D/g, "");
             
-            if (pattern === "phone") {
-                if (digits.length <= 2) el.value = digits;
-                else if (digits.length <= 6) el.value = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
-                else if (digits.length <= 10) el.value = `(${digits.slice(0, 2)}) ${digits.slice(2, 6)}-${digits.slice(6)}`;
-                else el.value = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7, 11)}`;
-            } 
-            else if (pattern === "cpf") {
-                let s = digits.slice(0, 11);
-                if (s.length > 3) s = s.slice(0, 3) + "." + s.slice(3);
-                if (s.length > 7) s = s.slice(0, 7) + "." + s.slice(7);
-                if (s.length > 11) s = s.slice(0, 11) + "-" + s.slice(11, 13);
-                el.value = s;
-            }
-            else if (pattern === "cnpj-cpf") {
-                if (digits.length <= 11) {
-                    // CPF
-                    let s = digits.slice(0, 11);
-                    if (s.length > 3) s = s.slice(0, 3) + "." + s.slice(3);
-                    if (s.length > 7) s = s.slice(0, 7) + "." + s.slice(7);
-                    if (s.length > 11) s = s.slice(0, 11) + "-" + s.slice(11, 13);
-                    el.value = s;
-                } else {
-                    // CNPJ
-                    let s = digits.slice(0, 14);
-                    if (s.length > 2) s = s.slice(0, 2) + "." + s.slice(2);
-                    if (s.length > 6) s = s.slice(0, 6) + "." + s.slice(6);
-                    if (s.length > 10) s = s.slice(0, 10) + "/" + s.slice(10);
-                    if (s.length > 15) s = s.slice(0, 15) + "-" + s.slice(15, 17);
-                    el.value = s;
-                }
+            if (digitos.length <= 2) {
+                campo.value = digitos;
+            } else if (digitos.length <= 6) {
+                campo.value = `(${digitos.slice(0, 2)}) ${digitos.slice(2)}`;
+            } else if (digitos.length <= 10) {
+                campo.value = `(${digitos.slice(0, 2)}) ${digitos.slice(2, 6)}-${digitos.slice(6)}`;
+            } else {
+                campo.value = `(${digitos.slice(0, 2)}) ${digitos.slice(2, 7)}-${digitos.slice(7, 11)}`;
             }
         });
     }
+
+    function mascaraCPF(campo) {
+        campo.addEventListener("input", () => {
+            const digitos = campo.value.replace(/\D/g, "");
+            let valorFormatado = digitos.slice(0, 11);
+            
+            if (valorFormatado.length > 3) valorFormatado = valorFormatado.slice(0, 3) + "." + valorFormatado.slice(3);
+            if (valorFormatado.length > 7) valorFormatado = valorFormatado.slice(0, 7) + "." + valorFormatado.slice(7);
+            if (valorFormatado.length > 11) valorFormatado = valorFormatado.slice(0, 11) + "-" + valorFormatado.slice(11, 13);
+            
+            campo.value = valorFormatado;
+        });
+    }
+
+    function mascaraDocumento(campo) {
+        campo.addEventListener("input", () => {
+            const digitos = campo.value.replace(/\D/g, "");
+            let valorFormatado = digitos.slice(0, 14);
+            
+            if (digitos.length <= 11) {
+                if (valorFormatado.length > 3) valorFormatado = valorFormatado.slice(0, 3) + "." + valorFormatado.slice(3);
+                if (valorFormatado.length > 7) valorFormatado = valorFormatado.slice(0, 7) + "." + valorFormatado.slice(7);
+                if (valorFormatado.length > 11) valorFormatado = valorFormatado.slice(0, 11) + "-" + valorFormatado.slice(11, 13);
+            } else {
+                if (valorFormatado.length > 2) valorFormatado = valorFormatado.slice(0, 2) + "." + valorFormatado.slice(2);
+                if (valorFormatado.length > 6) valorFormatado = valorFormatado.slice(0, 6) + "." + valorFormatado.slice(6);
+                if (valorFormatado.length > 10) valorFormatado = valorFormatado.slice(0, 10) + "/" + valorFormatado.slice(10);
+                if (valorFormatado.length > 15) valorFormatado = valorFormatado.slice(0, 15) + "-" + valorFormatado.slice(15, 17);
+            }
+            
+            campo.value = valorFormatado;
+        });
+    }
+
+    validarFormulario('jogador');
+    validarFormulario('anfitriao');
 });
